@@ -1,0 +1,169 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-brand: var(--brand);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-accent: var(--brand-accent);
+  --color-cream: var(--cream);
+  --color-charcoal: var(--charcoal);
+  --color-copper: var(--copper);
+
+  --font-display: "Fraunces", "Times New Roman", serif;
+  --font-sans: "Geist", system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Brand palette */
+  --brand: #00704A;
+  --brand-dark: #1E3932;
+  --brand-accent: #00A862;
+  --cream: #F2F0EB;
+  --charcoal: #0A0A0A;
+  --copper: #B87333;
+
+  /* App tokens - dark editorial default */
+  --background: #0A0A0A;
+  --foreground: #F2F0EB;
+  --card: #111111;
+  --card-foreground: #F2F0EB;
+  --popover: #111111;
+  --popover-foreground: #F2F0EB;
+  --primary: #00704A;
+  --primary-foreground: #F2F0EB;
+  --secondary: #1E3932;
+  --secondary-foreground: #F2F0EB;
+  --muted: #1a1a1a;
+  --muted-foreground: #8b8b85;
+  --accent: #00A862;
+  --accent-foreground: #0A0A0A;
+  --destructive: #c0392b;
+  --destructive-foreground: #F2F0EB;
+  --border: rgba(242, 240, 235, 0.08);
+  --input: rgba(242, 240, 235, 0.12);
+  --ring: #00A862;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html, body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--brand-accent);
+    color: var(--charcoal);
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* Custom utilities */
+@utility font-display {
+  font-family: var(--font-display);
+  font-feature-settings: "ss01", "ss02";
+  letter-spacing: -0.02em;
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility grain {
+  position: relative;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/></svg>");
+    opacity: 0.06;
+    mix-blend-mode: overlay;
+  }
+}
+
+@utility radial-vignette {
+  background-image: radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.85) 100%);
+}
+
+@utility brand-gradient {
+  background-image: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand) 50%, var(--brand-accent) 100%);
+}
+
+@utility magnetic {
+  transition: transform 400ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Marquee */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@utility animate-marquee {
+  animation: marquee 40s linear infinite;
+}
+
+/* Custom cursor */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 9999px;
+  background: var(--brand-accent);
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
+  transition: width 250ms ease, height 250ms ease, background 250ms ease;
+}
+.cursor-dot.hover {
+  width: 56px;
+  height: 56px;
+  background: var(--cream);
+}
+@media (pointer: coarse) {
+  .cursor-dot { display: none; }
+}
