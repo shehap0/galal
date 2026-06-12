@@ -92,13 +92,32 @@ function CustomCursor() {
 
 /* ---------- Smooth scroll ---------- */
 function useLenis() {
+  return useRef<Lenis>(null);
+}
+
+function useInitLenis(lenisRef: React.RefObject<Lenis | null>) {
   useEffect(() => {
     const lenis = new Lenis({ duration: 1.2, smoothWheel: true });
+    lenisRef.current = lenis;
     lenis.on("scroll", ScrollTrigger.update);
+
+    const handleAnchor = (e: Event) => {
+      const link = (e.target as HTMLElement).closest("a[href^='#']") as HTMLAnchorElement | null;
+      if (link && link.getAttribute("href") !== "#") {
+        e.preventDefault();
+        lenis.scrollTo(link.getAttribute("href")!);
+      }
+    };
+    document.addEventListener("click", handleAnchor);
+
     const raf = (time: number) => { lenis.raf(time * 1000); };
     gsap.ticker.add(raf);
     gsap.ticker.lagSmoothing(0);
-    return () => { gsap.ticker.remove(raf); lenis.destroy(); };
+    return () => {
+      document.removeEventListener("click", handleAnchor);
+      gsap.ticker.remove(raf);
+      lenis.destroy();
+    };
   }, []);
 }
 
@@ -124,7 +143,8 @@ function Magnetic({ children, className = "" }: { children: React.ReactNode; cla
 
 /* ---------- MAIN ---------- */
 function GalalCoffee() {
-  useLenis();
+  const lenisRef = useLenis();
+  useInitLenis(lenisRef);
   const main = useRef<HTMLElement>(null);
   const [progress, setProgress] = useState(0);
 
