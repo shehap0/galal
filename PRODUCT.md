@@ -6,11 +6,11 @@ brand
 
 ## Users
 
-Egyptian coffee enthusiasts discovering premium Egyptian coffee. They are culturally proud, taste-conscious, and seek a brand that honors Cairo's coffee heritage while feeling contemporary. Their core job: learn the Galal story, explore the collection, and find a coffee that feels like home.
+Egyptian coffee enthusiasts discovering premium Egyptian coffee. They are culturally proud, taste-conscious, and seek a brand that honors Egyptian coffee heritage while feeling contemporary. Their core job: learn the Galal story, explore the collection, and find a coffee that feels like home.
 
 ## Product Purpose
 
-Galal Coffee is the digital flagship of Egypt's most iconic coffee brand. It exists to tell the story of a 1987 Cairo roastery that became a cultural institution — and to make that story, and that coffee, accessible to a new generation. Success is measured in emotional connection first, purchase intent second.
+Galal Coffee is the digital flagship of Egypt's most iconic coffee brand. It exists to tell the story of a coffee car on the streets of Port Said in 2015 that grew into a nationwide institution and to make that story, and that coffee, accessible to a new generation. Success is measured in emotional connection first, purchase intent second.
 
 ## Brand Personality
 
