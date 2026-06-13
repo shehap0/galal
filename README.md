@@ -2,6 +2,8 @@
 
 > **Note:** This project is a functional prototype and design concept created to showcase the story and expansion of Galal Coffee. It is not the official website of the brand.
 
+🔗 **Live demo:** [galal-demo.vercel.app](https://galal-demo.vercel.app/)
+
 ## 📖 The Story
 This prototype celebrates the journey of **Mohamed Galal**, a self-made entrepreneur who started his coffee journey in **Port Said** with a single mobile coffee car. Today, Galal Coffee has transformed into an Egyptian icon, expanding from the Canal region to the heart of Cairo, Damietta, and Ismailia.
 
