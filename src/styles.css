@@ -228,3 +228,13 @@
     width: 100%;
   }
 }
+
+/* Nav compact state (pill on scroll) */
+nav.nav-compact {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  margin-top: 0.75rem;
+  max-width: min(1240px, calc(100% - 2rem));
+  border-radius: 9999px;
+  border: 1px solid rgba(242, 240, 235, 0.1);
+}

@@ -3,7 +3,7 @@ import { n as gsapWithCSS, r as require_react, t as useGSAP } from "../_libs/gsa
 import { n as require_jsx_runtime } from "../_libs/react+tanstack__react-query.mjs";
 import { t as ScrollTrigger } from "../_libs/gsap.mjs";
 import { t as Lenis } from "../_libs/lenis.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-BjQt3iyd.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-BH7jQAVF.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var hero_cup_default = "/assets/hero-cup-Befww7YJ.jpg";
@@ -18,6 +18,192 @@ var dessert_default = "/assets/dessert-CV0n1Mvi.png";
 var galal_background_default = "/assets/galal-background-DKvhO6sz.jpg";
 var grind_default = "/assets/grind-ZAErx6tl.jpg";
 var pour_default = "/assets/pour-9CFgizMa.jpg";
+var TestimonialsColumn = (props) => {
+	const trackRef = (0, import_react.useRef)(null);
+	(0, import_react.useEffect)(() => {
+		const track = trackRef.current;
+		if (!track) return;
+		const ctx = gsapWithCSS.to(track, {
+			yPercent: -50,
+			duration: props.duration || 10,
+			repeat: -1,
+			ease: "none"
+		});
+		return () => {
+			ctx.kill();
+		};
+	}, [props.duration]);
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+		className: props.className,
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+			ref: trackRef,
+			className: "flex flex-col gap-6 pb-6",
+			children: [...new Array(2)].map((_, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "flex flex-col gap-6",
+				children: props.testimonials.map(({ text, image, name, role }, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "p-8 rounded-3xl border border-cream/10 shadow-lg shadow-brand/5 max-w-xs w-full bg-charcoal/60",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+						className: "text-cream/80 text-sm leading-relaxed",
+						children: [
+							"“",
+							text,
+							"”"
+						]
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "flex items-center gap-3 mt-5",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+							width: 40,
+							height: 40,
+							src: image,
+							alt: name,
+							className: "h-10 w-10 rounded-full object-cover"
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+							className: "text-cream text-sm font-medium leading-tight",
+							children: name
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+							className: "text-cream/50 text-xs leading-tight mt-0.5",
+							children: role
+						})] })]
+					})]
+				}, i))
+			}, index))
+		})
+	});
+};
+gsapWithCSS.registerPlugin(ScrollTrigger);
+var testimonials = [
+	{
+		text: "The best coffee quality in Egypt right now. I've been following their journey since the car in Port Said, and they still maintain the same incredible standard.",
+		image: "https://randomuser.me/api/portraits/men/2.jpg",
+		name: "Omar H.",
+		role: "Coffee Enthusiast"
+	},
+	{
+		text: "Finally, an Egyptian brand that understands specialty coffee. Their V60 is perfect, and the atmosphere in the Sheraton branch is very cozy for working.",
+		image: "https://randomuser.me/api/portraits/women/3.jpg",
+		name: "Sara M.",
+		role: "Remote Worker"
+	},
+	{
+		text: "Amazing experience! The history of this place makes the coffee taste better. A true Port Saidi success story that we are all proud of.",
+		image: "https://randomuser.me/api/portraits/men/4.jpg",
+		name: "Ahmed Z.",
+		role: "Local Business Owner"
+	},
+	{
+		text: "I love the consistency of the beans. Whether I'm in Port Said or Cairo, the taste is exactly the same. Highly recommended for real coffee addicts.",
+		image: "https://randomuser.me/api/portraits/women/5.jpg",
+		name: "Mariam E.",
+		role: "Home Barista"
+	},
+	{
+		text: "Great service and even better coffee. It's inspiring to see a local brand grow like this. The signature blends are a must-try!",
+		image: "https://randomuser.me/api/portraits/men/7.jpg",
+		name: "Khaled W.",
+		role: "Brand Fan"
+	},
+	{
+		text: "The Port Said blend is something else. Rich, smooth, and full of character. Perfect for my morning ritual.",
+		image: "https://randomuser.me/api/portraits/women/1.jpg",
+		name: "Nour K.",
+		role: "Morning Regular"
+	},
+	{
+		text: "I drive 20 minutes just to get my Galal fix. The Spanish Latte is the best I have had anywhere in Egypt.",
+		image: "https://randomuser.me/api/portraits/men/9.jpg",
+		name: "Youssef A.",
+		role: "Devoted Customer"
+	},
+	{
+		text: "The staff remembers your order, the beans are always fresh, and the vibe is unmatched. This is what Egyptian coffee culture should be.",
+		image: "https://randomuser.me/api/portraits/women/6.jpg",
+		name: "Dina L.",
+		role: "Coffee Explorer"
+	},
+	{
+		text: "From bean to cup, everything is intentional. You can taste the Bousaidi spirit in every sip. Proud to be a regular since 2019.",
+		image: "https://randomuser.me/api/portraits/women/8.jpg",
+		name: "Karim F.",
+		role: "Long-time Regular"
+	}
+];
+var firstColumn = testimonials.slice(0, 3);
+var secondColumn = testimonials.slice(3, 6);
+var thirdColumn = testimonials.slice(6, 9);
+var TestimonialsSection = () => {
+	const headingRef = (0, import_react.useRef)(null);
+	(0, import_react.useEffect)(() => {
+		const el = headingRef.current;
+		if (!el) return;
+		const ctx = gsapWithCSS.fromTo(el, {
+			opacity: 0,
+			y: 24
+		}, {
+			opacity: 1,
+			y: 0,
+			duration: .8,
+			ease: "power3.out",
+			scrollTrigger: {
+				trigger: el,
+				start: "top 85%",
+				once: true
+			}
+		});
+		return () => {
+			ctx.kill();
+		};
+	}, []);
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
+		className: "py-32 md:py-48 px-6 bg-charcoal relative overflow-hidden",
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "max-w-7xl mx-auto",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				ref: headingRef,
+				className: "flex flex-col items-center text-center max-w-xl mx-auto",
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "inline-block text-brand-accent text-xs tracking-[0.3em] uppercase border border-brand-accent/20 rounded-full px-4 py-1.5 mb-6",
+						children: "Testimonials"
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h2", {
+						className: "font-display font-light text-cream leading-[0.95]",
+						style: { fontSize: "clamp(2.5rem, 6vw, 5rem)" },
+						children: [
+							"The cup speaks.",
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								className: "italic text-brand-accent",
+								children: "The city replies."
+							})
+						]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+						className: "mt-5 text-cream/60 max-w-md",
+						children: "Real words from the people who drink Galal Coffee every day."
+					})
+				]
+			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "flex justify-center gap-6 mt-16 [mask-image:linear-gradient(to_bottom,transparent,black_25%,black_75%,transparent)] max-h-[700px] overflow-hidden",
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TestimonialsColumn, {
+						testimonials: firstColumn,
+						duration: 15
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TestimonialsColumn, {
+						testimonials: secondColumn,
+						className: "hidden md:block",
+						duration: 19
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TestimonialsColumn, {
+						testimonials: thirdColumn,
+						className: "hidden lg:block",
+						duration: 17
+					})
+				]
+			})]
+		})
+	});
+};
 function CrownIcon({ className = "" }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("svg", {
 		viewBox: "0 0 64 40",
@@ -338,17 +524,30 @@ function GalalCoffee() {
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Heritage, {}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Journey, {}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Stats, {}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Voices, {}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TestimonialsSection, {}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FinalCTA, {}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Footer, {})
 		]
 	});
 }
 function Nav() {
+	const navRef = (0, import_react.useRef)(null);
+	(0, import_react.useEffect)(() => {
+		const nav = navRef.current;
+		if (!nav) return;
+		const st = ScrollTrigger.create({
+			trigger: document.body,
+			start: "top -60px",
+			onEnter: () => nav.classList.add("nav-compact"),
+			onLeaveBack: () => nav.classList.remove("nav-compact")
+		});
+		return () => st.kill();
+	}, []);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("header", {
-		className: "fixed top-0 left-0 right-0 z-50 bg-charcoal/20 backdrop-blur-xl border-b border-cream/5",
+		className: "fixed top-0 left-0 right-0 z-50",
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("nav", {
-			className: "flex items-center justify-between max-w-7xl mx-auto px-5 md:px-10 py-3",
+			ref: navRef,
+			className: "flex items-center justify-between px-5 md:px-10 py-6 max-w-[2000px] mx-auto bg-charcoal/20 backdrop-blur-xl border-b border-cream/5 transition-all duration-500",
 			children: [
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 					href: "#top",
@@ -955,70 +1154,6 @@ function Stats() {
 		})
 	});
 }
-function Voices() {
-	const reviews = [
-		{
-			n: "Omar H.",
-			q: "The best coffee quality in Egypt right now. I've been following their journey since the car in Port Said, and they still maintain the same incredible standard."
-		},
-		{
-			n: "Sara M.",
-			q: "Finally, an Egyptian brand that understands specialty coffee. Their V60 is perfect, and the atmosphere in the Sheraton branch is very cozy for working."
-		},
-		{
-			n: "Ahmed Z.",
-			q: "Amazing experience! The history of this place makes the coffee taste better. A true Port Saidi success story that we are all proud of."
-		},
-		{
-			n: "Mariam E.",
-			q: "I love the consistency of the beans. Whether I'm in Port Said or Cairo, the taste is exactly the same. Highly recommended for real coffee addicts."
-		},
-		{
-			n: "Khaled W.",
-			q: "Great service and even better coffee. It's inspiring to see a local brand grow like this. The signature blends are a must-try!"
-		}
-	];
-	const initials = (name) => name.split(" ").map((w) => w[0]).join("");
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
-		className: "py-32 md:py-48 px-6 bg-charcoal",
-		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-			className: "max-w-5xl mx-auto",
-			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "flex items-center gap-3 text-cream/40 text-xs tracking-[0.3em] uppercase mb-16 reveal-up",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CrownIcon, { className: "w-5 h-3 text-brand-accent" }), "What Egypt says"]
-			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				className: "space-y-8",
-				children: reviews.map((v, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("figure", {
-					className: "flex items-start gap-6 py-6 border-b border-cream/5 last:border-0",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-brand-accent/10 text-brand-accent text-lg font-medium font-mono tracking-wide",
-						children: initials(v.n)
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "flex-1 min-w-0",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("blockquote", {
-							className: "font-display text-cream/90 leading-relaxed text-balance",
-							style: { fontSize: "clamp(1rem, 1.5vw, 1.35rem)" },
-							children: [
-								"“",
-								v.q,
-								"”"
-							]
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("figcaption", {
-							className: "mt-2 flex items-center gap-3",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-								className: "text-cream/70 text-sm font-medium",
-								children: v.n
-							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-								className: "text-cream/30 text-[10px] tracking-widest uppercase",
-								children: "Verified"
-							})]
-						})]
-					})]
-				}, i))
-			})]
-		})
-	});
-}
 function FinalCTA() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
 		className: "relative py-40 md:py-56 px-6 overflow-hidden",
@@ -1211,14 +1346,14 @@ function Footer() {
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "mt-16 pt-8 border-t border-cream/10 flex flex-wrap items-center justify-between gap-4 text-cream/40 text-xs tracking-wide",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
-					"© 2026",
+					"Made with ❤️ love by",
 					" ",
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-						href: "https://github.com/shehap0",
+						href: "https://www.facebook.com/people/Auto-synapse/61590422384756/",
 						target: "_blank",
 						rel: "noopener noreferrer",
 						className: "shehap-link",
-						children: "shehap"
+						children: "Auto synapse"
 					}),
 					" ",
 					"· Port Said · Cairo · Ismailia · Damietta, Egypt"

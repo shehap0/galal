@@ -17,6 +17,7 @@ import dessertImg from "@/assets/dessert.png";
 import galalBg from "@/assets/galal-background.jpg";
 import grind from "@/assets/grind.jpg";
 import pourImg from "@/assets/pour.jpg";
+import TestimonialsSection from "@/components/TestimonialsSection";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -316,7 +317,7 @@ function GalalCoffee() {
       <Stats />
 
       {/* TESTIMONIALS */}
-      <Voices />
+      <TestimonialsSection />
 
       {/* CTA */}
       <FinalCTA />
@@ -330,9 +331,28 @@ function GalalCoffee() {
 /* ---------- Sections ---------- */
 
 function Nav() {
+  const navRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const nav = navRef.current;
+    if (!nav) return;
+
+    const st = ScrollTrigger.create({
+      trigger: document.body,
+      start: "top -60px",
+      onEnter: () => nav.classList.add("nav-compact"),
+      onLeaveBack: () => nav.classList.remove("nav-compact"),
+    });
+
+    return () => st.kill();
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-charcoal/20 backdrop-blur-xl border-b border-cream/5">
-      <nav className="flex items-center justify-between max-w-7xl mx-auto px-5 md:px-10 py-3">
+    <header className="fixed top-0 left-0 right-0 z-50">
+      <nav
+        ref={navRef}
+        className="flex items-center justify-between px-5 md:px-10 py-6 max-w-[2000px] mx-auto bg-charcoal/20 backdrop-blur-xl border-b border-cream/5 transition-all duration-500"
+      >
         <a href="#top" className="flex items-center gap-2.5 text-cream">
           <CrownIcon className="w-7 h-5 text-brand-accent" />
           <span className="font-display text-lg tracking-tight">Galal</span>
@@ -825,9 +845,9 @@ function Footer() {
 
         <div className="mt-16 pt-8 border-t border-cream/10 flex flex-wrap items-center justify-between gap-4 text-cream/40 text-xs tracking-wide">
           <div>
-            Made with{" "}
-            <a href="https://github.com/shehap0" target="_blank" rel="noopener noreferrer" className="shehap-link">love</a>
-            {" "}by shehap &middot; Port Said &middot; Cairo &middot; Ismailia &middot; Damietta, Egypt
+            Made with ❤️ love by{" "}
+            <a href="https://www.facebook.com/people/Auto-synapse/61590422384756/" target="_blank" rel="noopener noreferrer" className="shehap-link">Auto synapse</a>
+            {" "}&middot; Port Said &middot; Cairo &middot; Ismailia &middot; Damietta, Egypt
           </div>
           <div className="flex items-center gap-6">
             <a href="https://www.facebook.com/Galalcoffee1/?locale=ar_AR" target="_blank" rel="noopener noreferrer" className="hover:text-cream">Facebook</a>
