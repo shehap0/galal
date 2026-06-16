@@ -4,10 +4,10 @@ import { a as createRouter, c as createFileRoute, d as useRouter, l as createRoo
 import { n as require_jsx_runtime, t as QueryClientProvider } from "../_libs/react+tanstack__react-query.mjs";
 import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
 import { t as ScrollTrigger } from "../_libs/gsap.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-DjMsmnQ9.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-7lj-HN7y.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
-var styles_default = "/assets/styles-BC8lZhdt.css";
+var styles_default = "/assets/styles-DNbRfuAM.css";
 function reportLovableError(error, context = {}) {
 	if (typeof window === "undefined") return;
 	window.__lovableEvents?.captureException?.(error, {
@@ -139,7 +139,7 @@ function RootComponent() {
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Outlet, {})
 	});
 }
-var $$splitComponentImporter = () => import("./routes-BH7jQAVF.mjs");
+var $$splitComponentImporter = () => import("./routes-DOMeBmD7.mjs");
 gsapWithCSS.registerPlugin(ScrollTrigger, useGSAP);
 var rootRouteChildren = { IndexRoute: createFileRoute("/")({
 	head: () => ({

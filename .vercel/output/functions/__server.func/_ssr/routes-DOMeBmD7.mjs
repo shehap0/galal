@@ -3,7 +3,7 @@ import { n as gsapWithCSS, r as require_react, t as useGSAP } from "../_libs/gsa
 import { n as require_jsx_runtime } from "../_libs/react+tanstack__react-query.mjs";
 import { t as ScrollTrigger } from "../_libs/gsap.mjs";
 import { t as Lenis } from "../_libs/lenis.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-BH7jQAVF.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-DOMeBmD7.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var hero_cup_default = "/assets/hero-cup-Befww7YJ.jpg";
@@ -547,7 +547,7 @@ function Nav() {
 		className: "fixed top-0 left-0 right-0 z-50",
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("nav", {
 			ref: navRef,
-			className: "flex items-center justify-between px-5 md:px-10 py-6 max-w-[2000px] mx-auto bg-charcoal/20 backdrop-blur-xl border-b border-cream/5 transition-all duration-500",
+			className: "flex items-center justify-between px-5 md:px-10 py-6 max-w-[2000px] mx-auto bg-charcoal/20 backdrop-blur-sm shadow-[0_4px_24px_rgba(0,168,98,0.05),0_1px_0_0_rgba(242,240,235,0.06)] transition-all duration-1000 ease-in-out",
 			children: [
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 					href: "#top",
