@@ -14,7 +14,7 @@ import icedCoffeeImg from "@/assets/ice-coffee.png";
 import espressoImg from "@/assets/Espresso.jpg";
 import milkshakeImg from "@/assets/milk-shake.png";
 import dessertImg from "@/assets/dessert.png";
-import liveImg from "@/assets/live.jpeg";
+import galalBg from "@/assets/galal-background.jpg";
 import grind from "@/assets/grind.jpg";
 import pourImg from "@/assets/pour.jpg";
 
@@ -203,15 +203,18 @@ function GalalCoffee() {
       );
     });
 
-    // Pinned heritage section with title
-    const heritageSec = document.querySelector(".heritage-pin") as HTMLElement | null;
-    if (heritageSec) {
-      ScrollTrigger.create({
-        trigger: heritageSec,
-        start: "top top",
-        end: "+=80%",
-        pin: ".heritage-title",
-        pinSpacing: false,
+    // Heritage title fade-out
+    const heritageTitle = document.querySelector(".heritage-title") as HTMLElement | null;
+    if (heritageTitle) {
+      gsap.to(heritageTitle, {
+        opacity: 0,
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".heritage-pin",
+          start: "top top",
+          end: "bottom top",
+          scrub: true,
+        },
       });
     }
 
@@ -252,6 +255,31 @@ function GalalCoffee() {
         },
       });
     }
+
+    // Scroll-reveal section headings
+    gsap.utils.toArray<HTMLElement>(".reveal-up").forEach((el) => {
+      gsap.fromTo(el,
+        { y: 40, opacity: 0 },
+        {
+          y: 0, opacity: 1, duration: 0.8, ease: "power3.out",
+          scrollTrigger: { trigger: el, start: "top 85%", once: true },
+        }
+      );
+    });
+
+    // Collection cards stagger entrance
+    gsap.utils.toArray<HTMLElement>(".bento-card").forEach((el, i) => {
+      gsap.fromTo(el,
+        { y: 30, opacity: 0, scale: 0.98 },
+        {
+          y: 0, opacity: 1, scale: 1,
+          duration: 0.7,
+          delay: i * 0.1,
+          ease: "power3.out",
+          scrollTrigger: { trigger: el, start: "top 88%", once: true },
+        }
+      );
+    });
   }, { scope: main });
 
   return (
@@ -303,8 +331,8 @@ function GalalCoffee() {
 
 function Nav() {
   return (
-    <header className="fixed top-5 left-1/2 -translate-x-1/2 z-50 w-[min(1240px,calc(100%-2rem))]">
-      <nav className="flex items-center justify-between rounded-full border border-cream/10 bg-charcoal/60 backdrop-blur-xl px-5 md:px-7 py-3">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-charcoal/20 backdrop-blur-xl border-b border-cream/5">
+      <nav className="flex items-center justify-between max-w-7xl mx-auto px-5 md:px-10 py-3">
         <a href="#top" className="flex items-center gap-2.5 text-cream">
           <CrownIcon className="w-7 h-5 text-brand-accent" />
           <span className="font-display text-lg tracking-tight">Galal</span>
@@ -412,13 +440,13 @@ function MarqueeStrip() {
 
 function Manifesto() {
   const paragraphs = [
-    "Our story did not begin in a boardroom or a high-end Cairo district. It began in the heart of Port Said, born from the passion and grit of a young man named Mohamed Galal. There was no shop, just a small car parked on the side of the road. Armed with a love for the perfect brew and a dream to serve his city, Galal started making coffee for the people of Port Said right from his mobile unit.",
-    "What set him apart was the quality, the personal touch, and the Bousaidi spirit of hard work. Word spread fast. The small car became a local landmark, and the landmark became a brand. Today, Galal Coffee has expanded across Egypt from Port Said to Cairo, Ismailia, Damietta, and Menofia, bringing our signature blends to every corner of the country.",
+    "It began in Port Said. A young man named Mohamed Galal, a small car, and a dream. No shop, no investors — just Bousaidi grit and a perfect brew.",
+    "Word spread. The car became a landmark. Today, Galal Coffee spans Port Said to Cairo, Ismailia, Damietta, and beyond.",
   ];
   return (
     <section id="story" className="relative py-40 md:py-56 px-6 bg-charcoal">
       <div className="max-w-5xl mx-auto">
-        <div className="flex items-center gap-3 text-cream/40 text-xs tracking-[0.3em] uppercase mb-12">
+        <div className="flex items-center gap-3 text-cream/40 text-xs tracking-[0.3em] uppercase mb-12 reveal-up">
           <CrownIcon className="w-5 h-3 text-brand-accent" />
           How it started
         </div>
@@ -442,7 +470,7 @@ function Collection() {
     <section id="collection" className="relative py-32 md:py-48 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="flex items-end justify-between mb-16 flex-wrap gap-6">
-          <h2 className="font-display font-light text-cream leading-[0.95] max-w-3xl"
+          <h2 className="font-display font-light text-cream leading-[0.95] max-w-3xl reveal-up"
               style={{ fontSize: "clamp(2.5rem, 6vw, 5.5rem)" }}>
             Our menu,<br />
             <span className="italic text-brand-accent">crafted to perfection.</span>
@@ -455,7 +483,7 @@ function Collection() {
         {/* Gapless bento: 3 cols x 3 rows */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-3 grid-flow-dense">
           {/* Tall hero card - Iced Coffee */}
-          <article className="group relative md:row-span-2 rounded-3xl overflow-hidden bg-brand-dark min-h-[520px] md:min-h-[640px] grain">
+          <article className="bento-card group relative md:row-span-2 rounded-3xl overflow-hidden bg-brand-dark min-h-[520px] md:min-h-[640px] grain card-shine">
             <img src={icedCoffeeImg} alt="" loading="lazy" width={1080} height={1600}
               className="scale-img absolute inset-0 h-full w-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-[1200ms] ease-out" />
             <div className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/30 to-transparent" />
@@ -479,7 +507,7 @@ function Collection() {
           </article>
 
           {/* Wide top right - Hot Drinks */}
-          <article className="group relative md:col-span-2 rounded-3xl overflow-hidden bg-brand min-h-[260px] md:min-h-[310px]">
+          <article className="bento-card group relative md:col-span-2 rounded-3xl overflow-hidden bg-brand min-h-[260px] md:min-h-[310px] card-shine">
             <img src={espressoImg} alt="" loading="lazy" width={1920} height={1280}
               className="scale-img absolute inset-0 h-full w-full object-cover opacity-30 mix-blend-luminosity group-hover:scale-105 transition-transform duration-[1200ms] ease-out" />
             <div className="absolute inset-0 p-8 md:p-10 flex items-end justify-between gap-6">
@@ -494,7 +522,7 @@ function Collection() {
           </article>
 
           {/* Bottom mid - Milkshakes */}
-          <article className="group relative rounded-3xl overflow-hidden bg-charcoal border border-cream/10 min-h-[310px]">
+          <article className="bento-card group relative rounded-3xl overflow-hidden bg-charcoal border border-cream/10 min-h-[310px] card-shine">
             <img src={milkshakeImg} alt="" loading="lazy" width={1080} height={1600}
               className="scale-img absolute inset-0 h-full w-full object-cover opacity-50 group-hover:scale-110 transition-transform duration-[1200ms] ease-out" />
             <div className="absolute inset-0 bg-gradient-to-tr from-charcoal via-charcoal/40 to-transparent" />
@@ -508,7 +536,7 @@ function Collection() {
           </article>
 
           {/* Bottom right - Sweet Treats */}
-          <article className="group relative rounded-3xl overflow-hidden brand-gradient min-h-[310px] grain">
+          <article className="bento-card group relative rounded-3xl overflow-hidden brand-gradient min-h-[310px] grain card-shine">
             <img src={dessertImg} alt="" loading="lazy" width={1080} height={1600}
               className="scale-img absolute inset-0 h-full w-full object-cover opacity-40 mix-blend-luminosity group-hover:scale-105 transition-transform duration-[1200ms] ease-out" />
             <div className="absolute inset-0 bg-gradient-to-tr from-charcoal/60 via-brand-dark/30 to-transparent" />
@@ -537,7 +565,7 @@ function Heritage() {
     <section id="heritage" className="heritage-pin relative bg-brand-dark overflow-hidden">
       <div className="grid md:grid-cols-12 gap-0 min-h-screen">
         <div className="heritage-title md:col-span-5 px-6 md:px-12 py-24 flex flex-col justify-center">
-          <div className="text-brand-accent text-xs tracking-[0.3em] uppercase mb-8 flex items-center gap-3">
+          <div className="text-brand-accent text-xs tracking-[0.3em] uppercase mb-8 flex items-center gap-3 reveal-up">
             <CrownIcon className="w-5 h-3" /> Heritage
           </div>
           <h2 className="font-display font-light text-cream leading-[0.95]"
@@ -551,7 +579,7 @@ function Heritage() {
         </div>
 
         <div className="md:col-span-7 relative">
-          <img src={liveImg} alt="Galal Coffee heritage" loading="lazy"
+          <img src={galalBg} alt="Galal Coffee heritage" loading="lazy"
             width={1536} height={1920}
             className="h-full w-full object-cover min-h-[60vh]" />
           <div className="absolute inset-0 bg-gradient-to-l from-transparent via-transparent to-brand-dark/40" />
@@ -593,7 +621,7 @@ function Journey() {
             <div className="text-brand-accent text-xs tracking-[0.3em] uppercase mb-6 flex items-center gap-3">
               <CrownIcon className="w-5 h-3" /> The craft
             </div>
-            <h2 className="font-display font-light text-cream leading-[0.95]"
+            <h2 className="font-display font-light text-cream leading-[0.95] reveal-up"
                 style={{ fontSize: "clamp(2.5rem, 6vw, 5.5rem)" }}>
               Five movements.<br />
               <span className="italic text-brand-accent">One cup.</span>
@@ -663,53 +691,40 @@ function Stats() {
 
 function Voices() {
   const reviews = [
-    { n: "Omar H.",   r: "Verified Google Review", q: "The best coffee quality in Egypt right now. I've been following their journey since the car in Port Said, and they still maintain the same incredible standard." },
-    { n: "Sara M.",   r: "Verified Google Review", q: "Finally, an Egyptian brand that understands specialty coffee. Their V60 is perfect, and the atmosphere in the Sheraton branch is very cozy for working." },
-    { n: "Ahmed Z.",  r: "Verified Google Review", q: "Amazing experience! The history of this place makes the coffee taste better. A true Port Saidi success story that we are all proud of." },
-    { n: "Mariam E.", r: "Verified Google Review", q: "I love the consistency of the beans. Whether I'm in Port Said or Cairo, the taste is exactly the same. Highly recommended for real coffee addicts." },
-    { n: "Khaled W.", r: "Verified Google Review", q: "Great service and even better coffee. It's inspiring to see a local brand grow like this. The signature blends are a must-try!" },
+    { n: "Omar H.",   q: "The best coffee quality in Egypt right now. I've been following their journey since the car in Port Said, and they still maintain the same incredible standard." },
+    { n: "Sara M.",   q: "Finally, an Egyptian brand that understands specialty coffee. Their V60 is perfect, and the atmosphere in the Sheraton branch is very cozy for working." },
+    { n: "Ahmed Z.",  q: "Amazing experience! The history of this place makes the coffee taste better. A true Port Saidi success story that we are all proud of." },
+    { n: "Mariam E.", q: "I love the consistency of the beans. Whether I'm in Port Said or Cairo, the taste is exactly the same. Highly recommended for real coffee addicts." },
+    { n: "Khaled W.", q: "Great service and even better coffee. It's inspiring to see a local brand grow like this. The signature blends are a must-try!" },
   ];
 
   const initials = (name: string) =>
-    name
-      .split(" ")
-      .map((w) => w[0])
-      .join("");
+    name.split(" ").map((w) => w[0]).join("");
 
   return (
-    <section className="py-32 md:py-48 px-6">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="font-display font-light text-cream leading-[0.95] max-w-4xl"
-            style={{ fontSize: "clamp(2.5rem, 6vw, 5.5rem)" }}>
-          The cup speaks.<br />
-          <span className="italic text-brand-accent">The city replies.</span>
-        </h2>
+    <section className="py-32 md:py-48 px-6 bg-charcoal">
+      <div className="max-w-5xl mx-auto">
+        <div className="flex items-center gap-3 text-cream/40 text-xs tracking-[0.3em] uppercase mb-16 reveal-up">
+          <CrownIcon className="w-5 h-3 text-brand-accent" />
+          What Egypt says
+        </div>
 
-        <div className="mt-20 grid md:grid-cols-3 gap-6">
+        <div className="space-y-8">
           {reviews.map((v, i) => (
-            <figure key={i} className="group relative rounded-3xl bg-brand-dark/40 border border-cream/10 p-8 md:p-10 overflow-hidden">
-              <CrownIcon className="absolute top-8 right-8 w-8 h-5 text-brand-accent/40" />
-              {/* Stars */}
-              <div className="flex items-center gap-0.5 mb-5">
-                {[...Array(5)].map((_, s) => (
-                  <svg key={s} width="14" height="14" viewBox="0 0 24 24" fill="#F59E0B" aria-hidden="true">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                  </svg>
-                ))}
+            <figure key={i} className="flex items-start gap-6 py-6 border-b border-cream/5 last:border-0">
+              <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-brand-accent/10 text-brand-accent text-lg font-medium font-mono tracking-wide">
+                {initials(v.n)}
+              </span>
+              <div className="flex-1 min-w-0">
+                <blockquote className="font-display text-cream/90 leading-relaxed text-balance"
+                            style={{ fontSize: "clamp(1rem, 1.5vw, 1.35rem)" }}>
+                  &ldquo;{v.q}&rdquo;
+                </blockquote>
+                <figcaption className="mt-2 flex items-center gap-3">
+                  <span className="text-cream/70 text-sm font-medium">{v.n}</span>
+                  <span className="text-cream/30 text-[10px] tracking-widest uppercase">Verified</span>
+                </figcaption>
               </div>
-              <blockquote className="font-display text-cream leading-snug text-balance"
-                          style={{ fontSize: "clamp(1.1rem, 1.4vw, 1.4rem)" }}>
-                &ldquo;{v.q}&rdquo;
-              </blockquote>
-              <figcaption className="mt-8 flex items-center gap-4">
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand-accent/20 text-brand-accent text-sm font-medium font-mono">
-                  {initials(v.n)}
-                </span>
-                <div>
-                  <div className="text-cream text-sm font-medium">{v.n}</div>
-                  <div className="text-cream/50 text-xs tracking-wide">{v.r}</div>
-                </div>
-              </figcaption>
             </figure>
           ))}
         </div>
@@ -731,7 +746,7 @@ function FinalCTA() {
       <div className="absolute inset-0 bg-charcoal/40" />
       <div className="absolute inset-0 bg-gradient-to-t from-charcoal/80 via-transparent to-transparent" />
       <div className="relative z-[1] max-w-6xl mx-auto text-center">
-        <CrownIcon className="mx-auto w-14 h-9 text-brand-accent mb-10" />
+        <CrownIcon className="mx-auto w-14 h-9 text-brand-accent mb-10 animate-float" />
         <h2 className="font-display font-light leading-[0.95] text-balance"
             style={{ fontSize: "clamp(2.75rem, 8vw, 7.5rem)", color: "var(--brand-accent)" }}>
           From Port Said<br />
@@ -809,7 +824,11 @@ function Footer() {
         </div>
 
         <div className="mt-16 pt-8 border-t border-cream/10 flex flex-wrap items-center justify-between gap-4 text-cream/40 text-xs tracking-wide">
-          <div>&copy; 2025 Galal Coffee &middot; Port Said &middot; Cairo &middot; Ismailia &middot; Damietta, Egypt</div>
+          <div>
+            Made with{" "}
+            <a href="https://github.com/shehap0" target="_blank" rel="noopener noreferrer" className="shehap-link">love</a>
+            {" "}by shehap &middot; Port Said &middot; Cairo &middot; Ismailia &middot; Damietta, Egypt
+          </div>
           <div className="flex items-center gap-6">
             <a href="https://www.facebook.com/Galalcoffee1/?locale=ar_AR" target="_blank" rel="noopener noreferrer" className="hover:text-cream">Facebook</a>
             <a href="https://www.instagram.com/galal_coffee/?hl=ar" target="_blank" rel="noopener noreferrer" className="hover:text-cream">Instagram</a>
