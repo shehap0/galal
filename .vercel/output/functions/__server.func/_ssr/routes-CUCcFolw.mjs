@@ -1,19 +1,20 @@
 import { r as __toESM } from "../_runtime.mjs";
 import { n as gsapWithCSS, r as require_react, t as useGSAP } from "../_libs/gsap+gsap__react+react.mjs";
+import { d as require_react_dom } from "../_libs/@tanstack/react-router+[...].mjs";
 import { n as require_jsx_runtime } from "../_libs/react+tanstack__react-query.mjs";
 import { t as ScrollTrigger } from "../_libs/gsap.mjs";
 import { t as Lenis } from "../_libs/lenis.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-4QEbEnRP.js
+//#region node_modules/.nitro/vite/services/ssr/assets/ice-coffee-hQsdIxNi.js
+var ice_coffee_default = "/assets/ice-coffee-5hol3suY.png";
+//#endregion
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-CUCcFolw.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
+var import_react_dom = require_react_dom();
 var beans_default = "/assets/beans-B9NHRpxq.jpg";
 var roast_default = "/assets/roast-Cbz1XM96.jpg";
 var ritual_default = "/assets/ritual-BsQ4I75X.png";
 var portsaid_default = "/assets/portsaid-CKvebLJH.mp4";
-var ice_coffee_default = "/assets/ice-coffee-5hol3suY.png";
-var Espresso_default = "/assets/Espresso-CkFJFTQG.jpg";
-var milk_shake_default = "/assets/milk-shake-pVksupJq.png";
-var dessert_default = "/assets/dessert-CV0n1Mvi.png";
 var galal_background_default = "/assets/galal-background-DKvhO6sz.jpg";
 var grind_default = "/assets/grind-ZAErx6tl.jpg";
 var pour_default = "/assets/pour-9CFgizMa.jpg";
@@ -391,6 +392,1292 @@ var LandingHero = () => {
 		]
 	});
 };
+var milkshake_default = "/assets/milkshake-CG5PfHhh.png";
+var rest_grind_default = "/assets/rest-grind-Dpq5yvjl.png";
+var the_ritual_default = "/assets/the-ritual-BWQqiwVd.png";
+var menu_default = "/assets/menu-SF96eIi3.png";
+var FEATURED = [
+	{
+		id: 1,
+		name: "MILK SHAKE",
+		price: 80,
+		offerLabel: "New",
+		img: milkshake_default
+	},
+	{
+		id: 2,
+		name: "ICE DRINKS",
+		price: 80,
+		offerLabel: "Best Seller",
+		img: ice_coffee_default
+	},
+	{
+		id: 3,
+		name: "Frappuccino",
+		price: 50,
+		offerLabel: "Popular",
+		img: rest_grind_default
+	},
+	{
+		id: 4,
+		name: "WAFFLE/DONUT",
+		price: 60,
+		offerLabel: "Cozy",
+		img: the_ritual_default
+	}
+];
+var MENU_CATEGORIES = {
+	"MILK SHAKE": [
+		{
+			name: "M.S Caramel Basbousa (New)",
+			price: 20
+		},
+		{
+			name: "M.S Mix",
+			price: 15
+		},
+		{
+			name: "M.S Vanilla",
+			price: 15
+		},
+		{
+			name: "M.S Chocolate",
+			price: 15
+		},
+		{
+			name: "M.S Caramel",
+			price: 20
+		},
+		{
+			name: "M.S Strawberry",
+			price: 20
+		},
+		{
+			name: "M.S Peach",
+			price: 20
+		},
+		{
+			name: "M.S Pineapple",
+			price: 20
+		},
+		{
+			name: "M.S Blueberry",
+			price: 20
+		},
+		{
+			name: "M.S Kiwi",
+			price: 20
+		},
+		{
+			name: "M.S Mango",
+			price: 20
+		}
+	],
+	"SOFT DRINKS": [
+		{
+			name: "Jelly Cola",
+			price: 15
+		},
+		{
+			name: "Blueberry Cola",
+			price: 15
+		},
+		{
+			name: "Strawberry Cola",
+			price: 15
+		},
+		{
+			name: "Strawberry Mint",
+			price: 15
+		},
+		{
+			name: "Blue Taste",
+			price: 15
+		},
+		{
+			name: "Green Apple Lemon",
+			price: 15
+		},
+		{
+			name: "Red Berry",
+			price: 15
+		},
+		{
+			name: "Mint Kiwi",
+			price: 15
+		},
+		{
+			name: "Mango Kiwi",
+			price: 15
+		},
+		{
+			name: "Strawberry Kiwi",
+			price: 15
+		},
+		{
+			name: "Pineapple Mix",
+			price: 15
+		},
+		{
+			name: "Mango Mix",
+			price: 15
+		},
+		{
+			name: "Cherry Cola",
+			price: 15
+		},
+		{
+			name: "Conta Lamer",
+			price: 15
+		},
+		{
+			name: "Benacolada",
+			price: 15
+		},
+		{
+			name: "Blue Passion",
+			price: 15
+		},
+		{
+			name: "Pink Colada",
+			price: 15
+		},
+		{
+			name: "Lemon Mint",
+			price: 15
+		},
+		{
+			name: "Lemonada",
+			price: 15
+		},
+		{
+			name: "Blueberry",
+			price: 15
+		},
+		{
+			name: "Happiness Drink",
+			price: 15
+		}
+	],
+	"NEW (Healthy Drinks)": [{
+		name: "Ice Tea (Green Tea Mint / Strawberry / Blueberry / Mango / Peach)",
+		price: 15
+	}, {
+		name: "Light Milk Shake",
+		price: 15
+	}],
+	"FRAPPUCCINO & FARABEH": [
+		{
+			name: "Frappuccino",
+			price: 20
+		},
+		{
+			name: "Frappuccino with Flavors",
+			price: 25
+		},
+		{
+			name: "Frappuccino Dolce",
+			price: 25
+		},
+		{
+			name: "Frappuccino Chocolate",
+			price: 25
+		},
+		{
+			name: "Ice Dolce",
+			price: 20
+		},
+		{
+			name: "Ice Latte",
+			price: 20
+		},
+		{
+			name: "Ice Mocha",
+			price: 20
+		},
+		{
+			name: "Ice Coffee",
+			price: 25
+		},
+		{
+			name: "illy Cream",
+			price: 15
+		},
+		{
+			name: "Ice Golden Oreo",
+			price: 20
+		},
+		{
+			name: "Ice Mocha Dolce",
+			price: 25
+		},
+		{
+			name: "Ice White Mocha",
+			price: 25
+		},
+		{
+			name: "Caramel Macchiato",
+			price: 20
+		},
+		{
+			name: "illy Cream Biscuits",
+			price: 30
+		},
+		{
+			name: "Nutella Lovers",
+			price: 30
+		}
+	],
+	"WINTER DRINKS": [
+		{
+			name: "Hot Dolce",
+			price: 15
+		},
+		{
+			name: "Golden Oreo",
+			price: 15
+		},
+		{
+			name: "Hot Chocolate",
+			price: 15
+		},
+		{
+			name: "Gersy",
+			price: 15
+		},
+		{
+			name: "Hot Lotus Cinnamon",
+			price: 15
+		},
+		{
+			name: "Corn Flakes",
+			price: 15
+		}
+	],
+	"COFFEE CORNER": [
+		{
+			name: "Turkey Coffee",
+			price: 10
+		},
+		{
+			name: "French Coffee",
+			price: 10
+		},
+		{
+			name: "Cappuccino Bonjourno",
+			price: 10
+		},
+		{
+			name: "Cappuccino Biscuits Vanilla",
+			price: 10
+		},
+		{
+			name: "Nescafe",
+			price: 10
+		},
+		{
+			name: "Flavors Tea",
+			price: 6
+		},
+		{
+			name: "Single Espresso",
+			price: 10
+		},
+		{
+			name: "Double Espresso",
+			price: 15
+		},
+		{
+			name: "American Coffee",
+			price: 15
+		}
+	],
+	"FLAVORS COFFEE": [
+		{
+			name: "Hazelnut Coffee (Regular)",
+			price: 10
+		},
+		{
+			name: "Vanilla Coffee",
+			price: 10
+		},
+		{
+			name: "Chocolate Coffee",
+			price: 10
+		},
+		{
+			name: "Banana Coffee",
+			price: 10
+		},
+		{
+			name: "Hazelnut Coffee (Special/Large)",
+			price: 15
+		},
+		{
+			name: "Almonds Coffee",
+			price: 15
+		},
+		{
+			name: "Shesha Apple Coffee",
+			price: 15
+		},
+		{
+			name: "Cookies Coffee",
+			price: 15
+		},
+		{
+			name: "Nutella Hazelnut",
+			price: 15
+		}
+	],
+	"CAPPUCCINO DRINKS": [
+		{
+			name: "Es. Cappuccino",
+			price: 15
+		},
+		{
+			name: "Special Cappuccino",
+			price: 15
+		},
+		{
+			name: "Cappuccino Espresso Flavors",
+			price: 17
+		},
+		{
+			name: "Hot Mocha",
+			price: 20
+		},
+		{
+			name: "Hot Flavors Mocha",
+			price: 22
+		},
+		{
+			name: "White Mocha",
+			price: 20
+		},
+		{
+			name: "Flat White",
+			price: 15
+		},
+		{
+			name: "Michato Espresso",
+			price: 15
+		},
+		{
+			name: "Irish Cream",
+			price: 20
+		}
+	]
+};
+var EXTRAS = [
+	{
+		id: "cream",
+		label: "Add Cream",
+		price: 5
+	},
+	{
+		id: "marshmello",
+		label: "Add Marshmello",
+		price: 5
+	},
+	{
+		id: "skimmed",
+		label: "Skimmed Milk / Diet Sugar",
+		price: 5
+	}
+];
+var ChevronDown = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("svg", {
+	width: "14",
+	height: "14",
+	viewBox: "0 0 24 24",
+	fill: "none",
+	stroke: "currentColor",
+	strokeWidth: "2",
+	strokeLinecap: "round",
+	strokeLinejoin: "round",
+	style: { flexShrink: 0 },
+	children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("polyline", { points: "6 9 12 15 18 9" })
+});
+function SelectBox({ label, value, onChange, options, placeholder }) {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+		style: { marginBottom: 24 },
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+			className: "aw-micro-label",
+			children: label
+		}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			style: { position: "relative" },
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("select", {
+				value,
+				onChange: (e) => onChange(e.target.value),
+				className: "aw-select",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+					value: "",
+					style: {
+						background: "#0e0f11",
+						color: "#666"
+					},
+					children: placeholder
+				}), options.map((o) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
+					value: o.value,
+					style: {
+						background: "#0e0f11",
+						color: "#fff"
+					},
+					children: o.label
+				}, o.value))]
+			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+				className: "aw-select-icon",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ChevronDown, {})
+			})]
+		})]
+	});
+}
+function OrderPanel() {
+	const [category, setCategory] = (0, import_react.useState)("");
+	const [itemName, setItemName] = (0, import_react.useState)("");
+	const [qty, setQty] = (0, import_react.useState)(1);
+	const [extras, setExtras] = (0, import_react.useState)([]);
+	const [placed, setPlaced] = (0, import_react.useState)(false);
+	const items = category ? MENU_CATEGORIES[category] : [];
+	const chosenItem = items.find((i) => i.name === itemName);
+	const extrasTotal = extras.reduce((s, id) => {
+		return s + (EXTRAS.find((x) => x.id === id)?.price ?? 0);
+	}, 0);
+	const total = ((chosenItem?.price ?? 0) + extrasTotal) * qty;
+	const toggleExtra = (id) => setExtras((prev) => prev.includes(id) ? prev.filter((e) => e !== id) : [...prev, id]);
+	const handleCategory = (c) => {
+		setCategory(c);
+		setItemName("");
+		setExtras([]);
+	};
+	const handleItem = (n) => {
+		setItemName(n);
+		setExtras([]);
+	};
+	const handlePlace = () => {
+		if (!chosenItem) return;
+		setPlaced(true);
+		setTimeout(() => {
+			setPlaced(false);
+			setCategory("");
+			setItemName("");
+			setQty(1);
+			setExtras([]);
+		}, 2800);
+	};
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+		className: "aw-order-panel",
+		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				style: {
+					display: "flex",
+					alignItems: "center",
+					gap: 12,
+					marginBottom: 32
+				},
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { style: {
+					width: 8,
+					height: 8,
+					borderRadius: "50%",
+					backgroundColor: "var(--accent)"
+				} }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+					className: "aw-panel-title",
+					children: "Interactive Request"
+				})]
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SelectBox, {
+				label: "01. Category Selection",
+				value: category,
+				onChange: handleCategory,
+				placeholder: "Select class...",
+				options: Object.keys(MENU_CATEGORIES).map((c) => ({
+					value: c,
+					label: c
+				}))
+			}),
+			category && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				style: { animation: "awFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards" },
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SelectBox, {
+					label: "02. Product Selection",
+					value: itemName,
+					onChange: handleItem,
+					placeholder: "Select item...",
+					options: items.map((i) => ({
+						value: i.name,
+						label: `${i.name} — ${i.price} EGP`
+					}))
+				})
+			}),
+			itemName && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				style: { animation: "awFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards" },
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+						className: "aw-micro-label",
+						children: "03. Optional Enhancements"
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						style: {
+							display: "flex",
+							flexDirection: "column",
+							gap: 8,
+							marginBottom: 28
+						},
+						children: EXTRAS.map((ex) => {
+							const checked = extras.includes(ex.id);
+							return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("label", {
+								className: `aw-extra-item ${checked ? "active" : ""}`,
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
+										type: "checkbox",
+										checked,
+										onChange: () => toggleExtra(ex.id),
+										style: { display: "none" }
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+										className: "aw-custom-checkbox",
+										children: checked && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "aw-custom-checkbox-dot" })
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+										style: {
+											fontSize: 13,
+											flex: 1,
+											letterSpacing: "-0.01em"
+										},
+										children: ex.label
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+										style: {
+											fontSize: 13,
+											opacity: .8,
+											fontFamily: "monospace"
+										},
+										children: [
+											"+",
+											ex.price,
+											" EGP"
+										]
+									})
+								]
+							}, ex.id);
+						})
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						style: {
+							display: "flex",
+							alignItems: "center",
+							justifyContent: "space-between",
+							marginBottom: 32
+						},
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "aw-micro-label",
+							style: { margin: 0 },
+							children: "04. Quantity"
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "aw-qty-selector",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+									onClick: () => setQty((q) => Math.max(1, q - 1)),
+									className: "aw-qty-btn",
+									children: "−"
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									style: {
+										fontSize: 15,
+										fontWeight: 500,
+										minWidth: 32,
+										textAlign: "center",
+										fontFamily: "monospace"
+									},
+									children: qty.toString().padStart(2, "0")
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+									onClick: () => setQty((q) => q + 1),
+									className: "aw-qty-btn",
+									children: "+"
+								})
+							]
+						})]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "aw-receipt",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								style: {
+									display: "flex",
+									justifyContent: "space-between",
+									marginBottom: 10
+								},
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+									style: { opacity: .6 },
+									children: [
+										itemName,
+										" × ",
+										qty
+									]
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+									style: { fontFamily: "monospace" },
+									children: [(chosenItem?.price ?? 0) * qty, " EGP"]
+								})]
+							}),
+							extras.map((id) => {
+								const ex = EXTRAS.find((e) => e.id === id);
+								if (!ex) return null;
+								return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									style: {
+										display: "flex",
+										justifyContent: "space-between",
+										marginBottom: 10,
+										fontSize: 13
+									},
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+										style: { opacity: .6 },
+										children: [
+											ex.label,
+											" × ",
+											qty
+										]
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+										style: { fontFamily: "monospace" },
+										children: [
+											"+",
+											ex.price * qty,
+											" EGP"
+										]
+									})]
+								}, id);
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "aw-receipt-total",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "ESTIMATED TOTAL" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+									style: {
+										fontFamily: "monospace",
+										fontSize: 20
+									},
+									children: [
+										total,
+										" ",
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+											style: { fontSize: 11 },
+											children: "EGP"
+										})
+									]
+								})]
+							})
+						]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+						onClick: handlePlace,
+						disabled: !chosenItem,
+						className: `aw-place-btn ${placed ? "success" : ""}`,
+						children: placed ? "TRANSACTION SECURED" : "CONFIRM SELECTION"
+					})
+				]
+			})
+		]
+	});
+}
+function MenuPortal({ onClose }) {
+	const stopProp = (e) => e.stopPropagation();
+	return (0, import_react_dom.createPortal)(/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("style", { children: `
+        .aw-backdrop {
+          position: fixed;
+          inset: 0;
+          z-index: 9998;
+          background-color: rgba(4, 4, 5, 0.85);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 24px;
+          animation: awBackdropIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        .aw-dialog {
+          width: 100%;
+          max-width: 1320px;
+          max-height: 92vh;
+          background-color: #0b0c0e;
+          border-radius: 24px;
+          border: 1px solid rgba(255, 255, 255, 0.07);
+          overflow: hidden;
+          display: grid;
+          grid-template-columns: 1fr;
+          box-shadow: 0 40px 100px rgba(0, 0, 0, 0.9);
+          animation: awDialogIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @media (min-width: 768px) {
+          .aw-dialog {
+            grid-template-columns: 1.5fr 0.9fr;
+          }
+        }
+        .aw-scroll-area {
+          overflow-y: auto;
+          max-height: 90vh;
+          padding: 40px;
+        }
+        .aw-scroll-area::-webkit-scrollbar {
+          width: 4px;
+        }
+        .aw-scroll-area::-webkit-scrollbar-track {
+          background: transparent;
+        }
+        .aw-scroll-area::-webkit-scrollbar-thumb {
+          background: rgba(255,255,255,0.1);
+          border-radius: 99px;
+        }
+        .aw-close-circle {
+          position: absolute;
+          top: 30px;
+          right: 30px;
+          width: 44px;
+          height: 44px;
+          border-radius: 50%;
+          background: rgba(255, 255, 255, 0.03);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          color: #fff;
+          font-size: 18px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 100;
+          transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .aw-close-circle:hover {
+          background: #fff;
+          color: #000;
+          transform: rotate(90deg);
+        }
+        .aw-dialog-left {
+          border-right: 1px solid rgba(255, 255, 255, 0.07);
+          display: flex;
+          flex-direction: column;
+          position: relative;
+        }
+        @keyframes awBackdropIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+        @keyframes awDialogIn {
+          from { opacity: 0; transform: translateY(30px) scale(0.98); }
+          to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+      ` }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+		onClick: onClose,
+		onWheel: (e) => e.stopPropagation(),
+		onTouchMove: (e) => e.stopPropagation(),
+		className: "aw-backdrop",
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			onClick: stopProp,
+			className: "aw-dialog",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "aw-dialog-left aw-scroll-area",
+				style: { padding: "28px 28px 40px" },
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+						onClick: onClose,
+						"aria-label": "Close dialog",
+						className: "aw-close-circle",
+						children: "×"
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						style: { marginBottom: 20 },
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "aw-micro-label",
+							style: {
+								color: "var(--accent)",
+								marginBottom: 6
+							},
+							children: "ARCHIVED BOARD"
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+							className: "aw-poster-title",
+							style: {
+								color: "#fff",
+								margin: 0,
+								fontSize: 20,
+								letterSpacing: "-0.03em"
+							},
+							children: "Galal Coffee Menu"
+						})]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						style: {
+							borderRadius: 16,
+							overflow: "hidden",
+							border: "1px solid rgba(255, 255, 255, 0.06)",
+							background: "#0e0f11"
+						},
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+							src: menu_default,
+							alt: "Menu list visualization",
+							style: {
+								width: "100%",
+								display: "block"
+							}
+						})
+					})
+				]
+			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "aw-scroll-area",
+				style: { backgroundColor: "#0b0c0e" },
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(OrderPanel, {})
+			})]
+		})
+	})] }), document.body);
+}
+function MenuSection() {
+	const [open, setOpen] = (0, import_react.useState)(false);
+	(0, import_react.useEffect)(() => {
+		document.body.style.overflow = open ? "hidden" : "";
+		return () => {
+			document.body.style.overflow = "";
+		};
+	}, [open]);
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
+		className: "aw-section",
+		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("style", { children: `
+        :root {
+          --accent: #10b981;
+        }
+        .aw-section {
+          background-color: #050506;
+          padding: 120px 24px;
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+          color: #ffffff;
+          overflow: hidden;
+        }
+        .aw-header {
+          display: flex;
+          align-items: flex-end;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          gap: 40px;
+          margin-bottom: 72px;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+          padding-bottom: 32px;
+        }
+        .aw-tag {
+          font-size: 11px;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.25em;
+          color: var(--accent);
+          display: inline-block;
+          margin-bottom: 16px;
+        }
+        .aw-title {
+          font-size: clamp(34px, 5vw, 56px);
+          font-weight: 400;
+          line-height: 1.05;
+          letter-spacing: -0.04em;
+          margin: 0;
+          color: #f3f4f6;
+        }
+        .aw-title-italic {
+          font-style: italic;
+          font-family: Georgia, serif;
+          color: #9ca3af;
+        }
+        .aw-nav-btn {
+          padding: 14px 28px;
+          border-radius: 100px;
+          border: 1px solid rgba(255,255,255,0.15);
+          background-color: transparent;
+          color: #fff;
+          font-size: 13px;
+          font-weight: 500;
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          overflow: hidden;
+          position: relative;
+          transition: border-color 0.3s;
+        }
+        .aw-nav-btn::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: #fff;
+          transform: translateY(100%);
+          transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+          z-index: 1;
+        }
+        .aw-nav-btn:hover {
+          border-color: #fff;
+        }
+        .aw-nav-btn:hover::before {
+          transform: translateY(0);
+        }
+        .aw-nav-btn-text {
+          position: relative;
+          z-index: 2;
+          transition: color 0.3s;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+        }
+        .aw-nav-btn:hover .aw-nav-btn-text {
+          color: #000;
+        }
+
+        /* Grid system styling */
+        .aw-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+          gap: 24px;
+        }
+
+        /* Card design inspired by editorial layouts */
+        .aw-card {
+          background-color: #0e0f11;
+          border: 1px solid rgba(255, 255, 255, 0.05);
+          border-radius: 16px;
+          overflow: hidden;
+          transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                      border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+          position: relative;
+        }
+        .aw-card:hover {
+          border-color: rgba(255, 255, 255, 0.2);
+          transform: translateY(-4px);
+        }
+        .aw-card-img-wrap {
+          width: 100%;
+          height: 260px;
+          position: relative;
+          overflow: hidden;
+          background-color: #121316;
+        }
+        .aw-card-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          opacity: 0.75;
+          transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s;
+        }
+        .aw-card:hover .aw-card-img {
+          transform: scale(1.05);
+          opacity: 0.9;
+        }
+        .aw-card-tag {
+          position: absolute;
+          top: 16px;
+          left: 16px;
+          background: rgba(10, 11, 13, 0.8);
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          color: #fff;
+          font-size: 10px;
+          text-transform: uppercase;
+          letter-spacing: 0.12em;
+          padding: 6px 12px;
+          border-radius: 100px;
+        }
+        .aw-card-body {
+          padding: 24px;
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+        }
+        .aw-card-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+        }
+        .aw-card-num {
+          font-size: 11px;
+          font-family: monospace;
+          opacity: 0.3;
+        }
+        .aw-card-title {
+          font-size: 18px;
+          font-weight: 500;
+          color: #fff;
+          margin: 0;
+          letter-spacing: -0.01em;
+        }
+        .aw-card-footer {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding-top: 12px;
+          border-top: 1px solid rgba(255, 255, 255, 0.04);
+        }
+        .aw-price {
+          font-family: monospace;
+          font-size: 16px;
+          font-weight: 500;
+        }
+        .aw-card-btn {
+          font-size: 11px;
+          text-transform: uppercase;
+          letter-spacing: 0.1em;
+          color: #fff;
+          background: transparent;
+          border: none;
+          padding: 0;
+          cursor: pointer;
+          position: relative;
+          display: flex;
+          align-items: center;
+          gap: 4px;
+        }
+        .aw-card-btn::after {
+          content: "";
+          position: absolute;
+          bottom: -2px;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background-color: var(--accent);
+          transform: scaleX(0);
+          transform-origin: right;
+          transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .aw-card:hover .aw-card-btn::after {
+          transform: scaleX(1);
+          transform-origin: left;
+        }
+
+        /* Order panel specific internal UI classes */
+        .aw-order-panel {
+          background-color: transparent;
+        }
+        .aw-panel-title {
+          font-size: 16px;
+          font-weight: 500;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+          margin: 0;
+          color: #9ca3af;
+        }
+        .aw-micro-label {
+          color: rgba(255, 255, 255, 0.4);
+          font-size: 11px;
+          font-weight: 500;
+          text-transform: uppercase;
+          letter-spacing: 0.15em;
+          margin-bottom: 10px;
+        }
+        .aw-select {
+          width: 100%;
+          padding: 14px 16px;
+          background-color: rgba(255,255,255,0.02);
+          color: #fff;
+          border: 1px solid rgba(255, 255, 255, 0.08);
+          border-radius: 8px;
+          font-size: 14px;
+          outline: none;
+          cursor: pointer;
+          appearance: none;
+          transition: border-color 0.25s, background-color 0.25s;
+        }
+        .aw-select:focus {
+          border-color: rgba(255, 255, 255, 0.3);
+          background-color: rgba(255,255,255,0.04);
+        }
+        .aw-select-icon {
+          position: absolute;
+          right: 16px;
+          top: 50%;
+          transform: translateY(-50%);
+          pointer-events: none;
+          color: rgba(255,255,255,0.4);
+        }
+        .aw-extra-item {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          cursor: pointer;
+          padding: 12px 16px;
+          border-radius: 8px;
+          background-color: rgba(255,255,255,0.01);
+          border: 1px solid rgba(255, 255, 255, 0.04);
+          transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .aw-extra-item:hover {
+          background-color: rgba(255,255,255,0.03);
+          border-color: rgba(255, 255, 255, 0.1);
+        }
+        .aw-extra-item.active {
+          background-color: rgba(16, 185, 129, 0.06);
+          border-color: rgba(16, 185, 129, 0.3);
+        }
+        .aw-custom-checkbox {
+          width: 16px;
+          height: 16px;
+          border: 1px solid rgba(255,255,255,0.2);
+          border-radius: 4px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.2s;
+        }
+        .aw-extra-item.active .aw-custom-checkbox {
+          border-color: var(--accent);
+          background-color: var(--accent);
+        }
+        .aw-custom-checkbox-dot {
+          width: 6px;
+          height: 6px;
+          background-color: #000;
+          border-radius: 50%;
+        }
+        .aw-qty-selector {
+          display: flex;
+          align-items: center;
+          background: rgba(255,255,255,0.02);
+          border: 1px solid rgba(255,255,255,0.08);
+          border-radius: 8px;
+          padding: 4px;
+        }
+        .aw-qty-btn {
+          width: 32px;
+          height: 32px;
+          background: transparent;
+          border: none;
+          color: #fff;
+          font-size: 16px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: opacity 0.2s;
+        }
+        .aw-qty-btn:hover {
+          opacity: 0.6;
+        }
+        .aw-receipt {
+          padding: 24px;
+          background-color: rgba(255,255,255,0.01);
+          border: 1px solid rgba(255,255,255,0.05);
+          border-radius: 12px;
+          margin-bottom: 24px;
+          font-size: 14px;
+        }
+        .aw-receipt-total {
+          border-top: 1px solid rgba(255,255,255,0.08);
+          padding-top: 18px;
+          margin-top: 14px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          letter-spacing: 0.05em;
+          font-weight: 500;
+        }
+        .aw-place-btn {
+          width: 100%;
+          padding: 16px 0;
+          border-radius: 8px;
+          background-color: #ffffff;
+          color: #000000;
+          font-size: 13px;
+          font-weight: 600;
+          letter-spacing: 0.08em;
+          border: none;
+          cursor: pointer;
+          transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .aw-place-btn:hover {
+          background-color: #eaeaea;
+          transform: translateY(-2px);
+        }
+        .aw-place-btn.success {
+          background-color: var(--accent);
+          color: #fff;
+        }
+        @keyframes awFadeIn {
+          from { opacity: 0; transform: translateY(12px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+      ` }),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				style: {
+					maxWidth: 1200,
+					margin: "0 auto"
+				},
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "aw-header",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "aw-tag",
+						children: "SELECTED OFFERS"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h2", {
+						className: "aw-title",
+						children: ["Our menu, ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "aw-title-italic",
+							children: "crafted to perfection."
+						})]
+					})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+						onClick: () => setOpen(true),
+						className: "aw-nav-btn",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+							className: "aw-nav-btn-text",
+							children: ["Launch Menu ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "→" })]
+						})
+					})]
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "aw-grid",
+					children: FEATURED.map((item, idx) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "aw-card",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "aw-card-img-wrap",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+								src: item.img,
+								alt: item.name,
+								className: "aw-card-img"
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								className: "aw-card-tag",
+								children: item.offerLabel
+							})]
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "aw-card-body",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "aw-card-header",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+									className: "aw-card-title",
+									children: item.name
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+									className: "aw-card-num",
+									children: [
+										"[ 0",
+										idx + 1,
+										" ]"
+									]
+								})]
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "aw-card-footer",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+									className: "aw-price",
+									children: [
+										item.price,
+										".00 ",
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+											style: {
+												fontSize: 11,
+												opacity: .5
+											},
+											children: "EGP"
+										})
+									]
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+									onClick: () => setOpen(true),
+									className: "aw-card-btn",
+									children: "Order ↗"
+								})]
+							})]
+						})]
+					}, item.id))
+				})]
+			}),
+			open && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(MenuPortal, { onClose: () => setOpen(false) })
+		]
+	});
+}
 function CrownIcon({ className = "" }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("svg", {
 		viewBox: "0 0 64 40",
@@ -707,7 +1994,7 @@ function GalalCoffee() {
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(LandingHero, {}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MarqueeStrip, {}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Manifesto, {}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Collection, {}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MenuSection, {}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Heritage, {}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Journey, {}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Stats, {}),
@@ -824,164 +2111,6 @@ function Manifesto() {
 						children: w
 					}, i))
 				}, pi))
-			})]
-		})
-	});
-}
-function Collection() {
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
-		id: "collection",
-		className: "relative py-32 md:py-48 px-6",
-		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-			className: "max-w-7xl mx-auto",
-			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "flex items-end justify-between mb-16 flex-wrap gap-6",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h2", {
-					className: "font-display font-light text-cream leading-[0.95] max-w-3xl reveal-up",
-					style: { fontSize: "clamp(2.5rem, 6vw, 5.5rem)" },
-					children: [
-						"Our menu,",
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "italic text-brand-accent",
-							children: "crafted to perfection."
-						})
-					]
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-					className: "text-cream/60 max-w-sm text-base leading-relaxed",
-					children: "From our signature Iced Spanish Latte to creamy milkshakes and warm waffles. Every item made with the same Bousaidi care."
-				})]
-			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-3 grid-flow-dense",
-				children: [
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("article", {
-						className: "bento-card group relative md:row-span-2 rounded-3xl overflow-hidden bg-brand-dark min-h-[520px] md:min-h-[640px] grain card-shine",
-						children: [
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-								src: ice_coffee_default,
-								alt: "",
-								loading: "lazy",
-								width: 1080,
-								height: 1600,
-								className: "scale-img absolute inset-0 h-full w-full object-cover opacity-90 group-hover:scale-105 transition-transform duration-[1200ms] ease-out"
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/30 to-transparent" }),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "absolute inset-0 p-8 md:p-10 flex flex-col justify-between",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "flex items-center gap-2 text-cream/70 text-xs tracking-widest uppercase",
-									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CrownIcon, { className: "w-4 h-3 text-brand-accent" }), " Signature Iced Coffee"]
-								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-										className: "font-display text-cream leading-tight",
-										style: { fontSize: "clamp(2rem, 3.4vw, 3.25rem)" },
-										children: "Iced Coffee"
-									}),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-										className: "mt-3 text-cream/70 max-w-md text-sm md:text-base leading-relaxed",
-										children: "Smooth, chilled, and expertly brewed. From our classic Iced Latte to the rich, signature Spanish Latte."
-									}),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-										className: "mt-6 flex items-center gap-6 text-brand-accent text-xs tracking-widest uppercase",
-										children: "Starting from EGP 75"
-									})
-								] })]
-							})
-						]
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("article", {
-						className: "bento-card group relative md:col-span-2 rounded-3xl overflow-hidden bg-brand min-h-[260px] md:min-h-[310px] card-shine",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-							src: Espresso_default,
-							alt: "",
-							loading: "lazy",
-							width: 1920,
-							height: 1280,
-							className: "scale-img absolute inset-0 h-full w-full object-cover opacity-30 mix-blend-luminosity group-hover:scale-105 transition-transform duration-[1200ms] ease-out"
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "absolute inset-0 p-8 md:p-10 flex items-end justify-between gap-6",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-								className: "text-cream/70 text-xs tracking-widest uppercase mb-3",
-								children: "The Hot Classics"
-							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-								className: "font-display text-cream leading-tight",
-								style: { fontSize: "clamp(1.75rem, 3vw, 2.75rem)" },
-								children: "Hot Drinks"
-							})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-								className: "text-brand-accent font-mono text-sm shrink-0",
-								children: "From EGP 44"
-							})]
-						})]
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("article", {
-						className: "bento-card group relative rounded-3xl overflow-hidden bg-charcoal border border-cream/10 min-h-[310px] card-shine",
-						children: [
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-								src: milk_shake_default,
-								alt: "",
-								loading: "lazy",
-								width: 1080,
-								height: 1600,
-								className: "scale-img absolute inset-0 h-full w-full object-cover opacity-50 group-hover:scale-110 transition-transform duration-[1200ms] ease-out"
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-0 bg-gradient-to-tr from-charcoal via-charcoal/40 to-transparent" }),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "absolute inset-0 p-8 flex flex-col justify-end",
-								children: [
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-										className: "text-brand-accent text-xs tracking-widest uppercase mb-3",
-										children: "Indulgent Milkshakes"
-									}),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-										className: "font-display text-cream leading-tight",
-										style: { fontSize: "clamp(1.5rem, 2.4vw, 2.25rem)" },
-										children: "Milkshakes"
-									}),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-										className: "mt-2 text-cream/60 text-sm",
-										children: "Creamy, thick, and blended to perfection. Featuring Ferrero Rocher, Golden Oreo, and Caramel."
-									})
-								]
-							})
-						]
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("article", {
-						className: "bento-card group relative rounded-3xl overflow-hidden brand-gradient min-h-[310px] grain card-shine",
-						children: [
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-								src: dessert_default,
-								alt: "",
-								loading: "lazy",
-								width: 1080,
-								height: 1600,
-								className: "scale-img absolute inset-0 h-full w-full object-cover opacity-40 mix-blend-luminosity group-hover:scale-105 transition-transform duration-[1200ms] ease-out"
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-0 bg-gradient-to-tr from-charcoal/60 via-brand-dark/30 to-transparent" }),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "absolute inset-0 p-8 flex flex-col justify-between",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CrownIcon, { className: "w-10 h-7 text-cream/90" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-										className: "text-cream/80 text-xs tracking-widest uppercase mb-3",
-										children: "Dessert"
-									}),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-										className: "font-display text-cream leading-tight",
-										style: { fontSize: "clamp(1.5rem, 2.4vw, 2.25rem)" },
-										children: "Sweet Treats"
-									}),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-										className: "mt-2 text-cream/80 text-sm",
-										children: "Golden, crispy waffles generously covered in rich chocolate, white chocolate, or Ferrero Rocher."
-									}),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-										className: "mt-5 text-brand-accent text-sm font-medium",
-										children: "Starting from EGP 68"
-									})
-								] })]
-							})
-						]
-					})
-				]
 			})]
 		})
 	});

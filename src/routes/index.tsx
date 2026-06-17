@@ -19,6 +19,7 @@ import grind from "@/assets/grind.jpg";
 import pourImg from "@/assets/pour.jpg";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import LandingHero from "@/components/LandingHero";
+import MenuSection from "@/components/MenuSection";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -305,8 +306,8 @@ function GalalCoffee() {
       {/* MANIFESTO */}
       <Manifesto />
 
-      {/* COLLECTION BENTO */}
-      <Collection />
+      {/* MENU SECTION */}
+      <MenuSection />
 
       {/* HERITAGE PINNED */}
       <Heritage />
