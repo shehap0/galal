@@ -18,6 +18,7 @@ import galalBg from "@/assets/galal-background.jpg";
 import grind from "@/assets/grind.jpg";
 import pourImg from "@/assets/pour.jpg";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import LandingHero from "@/components/LandingHero";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -295,8 +296,8 @@ function GalalCoffee() {
       {/* NAV */}
       <Nav />
 
-      {/* HERO */}
-      <Hero />
+      {/* LANDING HERO */}
+      <LandingHero />
 
       {/* MARQUEE */}
       <MarqueeStrip />
@@ -351,7 +352,7 @@ function Nav() {
     <header className="fixed top-0 left-0 right-0 z-50">
       <nav
         ref={navRef}
-        className="flex items-center justify-between px-5 md:px-10 py-6 max-w-[2000px] mx-auto bg-charcoal/20 backdrop-blur-sm shadow-[0_4px_24px_rgba(0,168,98,0.05),0_1px_0_0_rgba(242,240,235,0.06)] transition-all duration-1000 ease-in-out"
+        className="flex items-center justify-between px-5 md:px-10 py-6 max-w-[2000px] mx-auto transition-all duration-1000 ease-in-out"
       >
         <a href="#top" className="flex items-center gap-2.5 text-cream">
           <CrownIcon className="w-7 h-5 text-brand-accent" />

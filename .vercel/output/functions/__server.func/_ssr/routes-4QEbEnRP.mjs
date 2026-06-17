@@ -3,10 +3,9 @@ import { n as gsapWithCSS, r as require_react, t as useGSAP } from "../_libs/gsa
 import { n as require_jsx_runtime } from "../_libs/react+tanstack__react-query.mjs";
 import { t as ScrollTrigger } from "../_libs/gsap.mjs";
 import { t as Lenis } from "../_libs/lenis.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-DOMeBmD7.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-4QEbEnRP.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
-var hero_cup_default = "/assets/hero-cup-Befww7YJ.jpg";
 var beans_default = "/assets/beans-B9NHRpxq.jpg";
 var roast_default = "/assets/roast-Cbz1XM96.jpg";
 var ritual_default = "/assets/ritual-BsQ4I75X.png";
@@ -202,6 +201,194 @@ var TestimonialsSection = () => {
 				]
 			})]
 		})
+	});
+};
+var cup_review_default = "/assets/cup%20review-VvTxNW06.png";
+var bean001_default = "/assets/bean001-BA0-OYYh.png";
+var bean002_default = "/assets/bean002-Bvp30fsf.png";
+var bean003_default = "/assets/bean003-D3KwPboL.png";
+var bean005_default = "/assets/bean005-CIh66Gfb.png";
+var bean006_default = "/assets/bean006-Bv8x-CgP.png";
+var bean007_default = "/assets/bean007-7N0oDHj1.png";
+var cinnamon_default = "/assets/cinnamon-CZpqj1WJ.png";
+var chocolate1_default = "/assets/chocolate1-pWk_JC_e.png";
+var chocolate2_default = "/assets/chocolate2-nq1xLJDD.png";
+var beans = [
+	{
+		src: bean001_default,
+		cls: "top-[12%] left-[7%]  w-[35px]",
+		rot: -12
+	},
+	{
+		src: bean002_default,
+		cls: "top-[28%] left-[16%] w-[50px]",
+		rot: 18
+	},
+	{
+		src: bean003_default,
+		cls: "top-[62%] left-[8%]  w-[28px]",
+		rot: -28
+	},
+	{
+		src: bean005_default,
+		cls: "top-[8%]  right-[10%] w-[44px]",
+		rot: 15
+	},
+	{
+		src: bean006_default,
+		cls: "top-[30%] right-[6%]  w-[22px]",
+		rot: -18
+	},
+	{
+		src: bean007_default,
+		cls: "top-[55%] right-[10%] w-[52px]",
+		rot: 32
+	},
+	{
+		src: bean001_default,
+		cls: "top-[78%] left-[20%] w-[40px]",
+		rot: -8
+	},
+	{
+		src: bean003_default,
+		cls: "top-[72%] right-[20%] w-[30px]",
+		rot: 20
+	},
+	{
+		src: bean005_default,
+		cls: "top-[18%] left-[35%] w-[24px]",
+		rot: -22
+	},
+	{
+		src: bean002_default,
+		cls: "top-[82%] right-[30%] w-[28px]",
+		rot: 10
+	},
+	{
+		src: bean006_default,
+		cls: "top-[42%] left-[3%]  w-[36px]",
+		rot: 14
+	},
+	{
+		src: bean007_default,
+		cls: "top-[40%] right-[3%]  w-[40px]",
+		rot: -14
+	}
+];
+var LandingHero = () => {
+	const sectionRef = (0, import_react.useRef)(null);
+	useGSAP(() => {
+		gsapWithCSS.from(".hero-cup", {
+			scale: .9,
+			opacity: 0,
+			duration: 1.2,
+			ease: "power3.out"
+		});
+		gsapWithCSS.from(".hero-text-child", {
+			y: 40,
+			opacity: 0,
+			duration: .8,
+			stagger: .15,
+			delay: .5,
+			ease: "power3.out"
+		});
+		gsapWithCSS.utils.toArray(".bean").forEach((bean) => {
+			gsapWithCSS.to(bean, {
+				y: gsapWithCSS.utils.random(-30, -10),
+				rotation: gsapWithCSS.utils.random(-15, 15),
+				duration: gsapWithCSS.utils.random(1.5, 3),
+				repeat: -1,
+				yoyo: true,
+				delay: gsapWithCSS.utils.random(0, 2),
+				ease: "sine.inOut"
+			});
+		});
+		gsapWithCSS.utils.toArray(".heavy").forEach((el) => {
+			gsapWithCSS.to(el, {
+				y: gsapWithCSS.utils.random(-15, -8),
+				rotation: gsapWithCSS.utils.random(-5, 5),
+				duration: gsapWithCSS.utils.random(4, 6),
+				repeat: -1,
+				yoyo: true,
+				delay: gsapWithCSS.utils.random(0, 2),
+				ease: "sine.inOut"
+			});
+		});
+	}, { scope: sectionRef });
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
+		ref: sectionRef,
+		className: "relative h-screen bg-[#0D0A07] overflow-hidden flex flex-col items-center justify-center px-6",
+		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none",
+				style: { background: "radial-gradient(circle, rgba(180,100,20,0.12) 0%, transparent 70%)" }
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "absolute inset-0 pointer-events-none",
+				children: [
+					beans.map((b, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+						src: b.src,
+						alt: "",
+						className: `bean absolute ${b.cls}`,
+						style: { transform: `rotate(${b.rot}deg)` },
+						draggable: false
+					}, i)),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+						src: cinnamon_default,
+						alt: "",
+						className: "heavy absolute top-[38%] left-[2%] w-[130px] hidden sm:block",
+						draggable: false
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+						src: chocolate1_default,
+						alt: "",
+						className: "heavy absolute top-[32%] right-[2%] w-[140px] hidden sm:block",
+						draggable: false
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+						src: chocolate2_default,
+						alt: "",
+						className: "heavy absolute top-[55%] right-[1%] w-[110px] hidden sm:block",
+						draggable: false
+					})
+				]
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+				src: cup_review_default,
+				alt: "Galal Coffee cup",
+				className: "hero-cup relative z-10 w-[280px] sm:w-[340px] md:w-[400px] drop-shadow-[0_20px_60px_rgba(180,100,20,0.15)]",
+				draggable: false
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "hero-text relative z-10 text-center mt-10 max-w-xl",
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h1", {
+						className: "hero-text-child font-display text-cream font-light leading-[1.05]",
+						style: { fontSize: "clamp(2.5rem, 6vw, 5.5rem)" },
+						children: [
+							"Every sip tells",
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("br", {}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								className: "italic text-brand-accent",
+								children: "a story."
+							})
+						]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+						className: "hero-text-child mt-5 text-cream/60 text-base md:text-lg leading-relaxed max-w-md mx-auto",
+						children: "Hand-selected beans, slow-roasted to perfection. From our family to your cup."
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+						href: "#collection",
+						className: "hero-text-child inline-flex items-center gap-2 mt-8 rounded-full bg-cream text-charcoal px-8 py-4 text-sm font-medium hover:bg-brand-accent hover:text-charcoal transition-colors",
+						children: ["Explore our menu", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							"aria-hidden": true,
+							children: "→"
+						})]
+					})
+				]
+			})
+		]
 	});
 };
 function CrownIcon({ className = "" }) {
@@ -517,7 +704,7 @@ function GalalCoffee() {
 				})
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Nav, {}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Hero, {}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(LandingHero, {}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MarqueeStrip, {}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Manifesto, {}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Collection, {}),
@@ -547,7 +734,7 @@ function Nav() {
 		className: "fixed top-0 left-0 right-0 z-50",
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("nav", {
 			ref: navRef,
-			className: "flex items-center justify-between px-5 md:px-10 py-6 max-w-[2000px] mx-auto bg-charcoal/20 backdrop-blur-sm shadow-[0_4px_24px_rgba(0,168,98,0.05),0_1px_0_0_rgba(242,240,235,0.06)] transition-all duration-1000 ease-in-out",
+			className: "flex items-center justify-between px-5 md:px-10 py-6 max-w-[2000px] mx-auto transition-all duration-1000 ease-in-out",
 			children: [
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 					href: "#top",
@@ -592,97 +779,6 @@ function Nav() {
 				}) })
 			]
 		})
-	});
-}
-function Hero() {
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
-		id: "top",
-		className: "hero relative min-h-screen w-full flex items-center justify-center pt-32 pb-20 px-6 overflow-hidden grain",
-		children: [
-			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "absolute inset-0 -z-10",
-				children: [
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-						src: hero_cup_default,
-						alt: "",
-						className: "hero-cup h-full w-full object-cover object-center opacity-70",
-						width: 1536,
-						height: 1920
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-0 radial-vignette" }),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-0 bg-gradient-to-b from-charcoal/40 via-transparent to-charcoal" })
-				]
-			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "relative max-w-6xl w-full text-center",
-				children: [
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "hero-meta flex items-center justify-center gap-3 text-cream/60 text-xs tracking-[0.3em] uppercase mb-8",
-						children: [
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "h-px w-10 bg-cream/30" }),
-							"Roasted in Cairo · Est. 2015",
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "h-px w-10 bg-cream/30" })
-						]
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h1", {
-						className: "font-display font-light text-balance leading-[1] text-cream",
-						style: { fontSize: "clamp(3rem, 8.5vw, 8.5rem)" },
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "block overflow-hidden",
-							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-								className: "hero-word inline-block pb-2",
-								children: "The King"
-							})
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-							className: "block",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-								className: "hero-word inline-block italic text-brand-accent pb-2",
-								children: "Of Egyptian"
-							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-								className: "hero-word inline-block ml-4 pb-2",
-								children: "Coffee"
-							})]
-						})]
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-						className: "hero-sub mt-8 max-w-xl mx-auto text-base md:text-lg text-cream/70 leading-relaxed",
-						children: "From a car in Port Said to a nationwide icon. Every cup carries the Bousaidi spirit of hard work and the taste of home."
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "mt-10 flex flex-wrap items-center justify-center gap-3",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Magnetic, {
-							className: "hero-cta",
-							children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-								href: "#story",
-								className: "inline-flex items-center gap-3 rounded-full bg-cream text-charcoal px-7 py-4 text-sm font-medium tracking-wide hover:bg-brand-accent transition-colors",
-								children: ["Explore our story", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-									"aria-hidden": true,
-									children: "↓"
-								})]
-							})
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Magnetic, {
-							className: "hero-cta",
-							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-								href: "#collection",
-								className: "inline-flex items-center gap-3 rounded-full border border-cream/20 text-cream px-7 py-4 text-sm font-medium tracking-wide hover:border-cream hover:bg-cream/5 transition-colors",
-								children: "Discover our coffee"
-							})
-						})]
-					})
-				]
-			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "hero-meta absolute bottom-8 left-0 right-0 px-8 flex items-end justify-between text-cream/50 text-xs tracking-widest uppercase",
-				children: [
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Port Said · Est. 2015" }),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "hidden md:inline",
-						children: "Crafted · with · passion"
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Premium Arabica · ISO Certified" })
-				]
-			})
-		]
 	});
 }
 function MarqueeStrip() {
