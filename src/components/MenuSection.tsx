@@ -647,7 +647,7 @@ export default function MenuSection() {
   }, [open]);
 
   return (
-    <section className="aw-section">
+    <section id="collection" className="aw-section">
       <style>{`
         :root {
           --accent: #10b981;

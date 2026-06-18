@@ -7,7 +7,7 @@ import { t as Lenis } from "../_libs/lenis.mjs";
 //#region node_modules/.nitro/vite/services/ssr/assets/ice-coffee-hQsdIxNi.js
 var ice_coffee_default = "/assets/ice-coffee-5hol3suY.png";
 //#endregion
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-jZ7hNqTt.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-DgH81UPf.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var import_react_dom = require_react_dom();
@@ -1416,6 +1416,7 @@ function MenuSection() {
 		};
 	}, [open]);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
+		id: "collection",
 		className: "aw-section",
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("style", { children: `
