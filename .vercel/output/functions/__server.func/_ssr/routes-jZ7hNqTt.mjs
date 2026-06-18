@@ -7,7 +7,7 @@ import { t as Lenis } from "../_libs/lenis.mjs";
 //#region node_modules/.nitro/vite/services/ssr/assets/ice-coffee-hQsdIxNi.js
 var ice_coffee_default = "/assets/ice-coffee-5hol3suY.png";
 //#endregion
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-CUCcFolw.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-jZ7hNqTt.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var import_react_dom = require_react_dom();
@@ -799,35 +799,168 @@ var ChevronDown = () => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("svg", {
 	children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("polyline", { points: "6 9 12 15 18 9" })
 });
 function SelectBox({ label, value, onChange, options, placeholder }) {
+	const [open, setOpen] = (0, import_react.useState)(false);
+	const listRef = (0, import_react.useRef)(null);
+	const btnRef = (0, import_react.useRef)(null);
+	const selectedLabel = value ? options.find((o) => o.value === value)?.label ?? value : null;
+	(0, import_react.useEffect)(() => {
+		if (!open) return;
+		const handler = (e) => {
+			if (e.key === "Escape") {
+				setOpen(false);
+				btnRef.current?.focus();
+			}
+		};
+		window.addEventListener("keydown", handler);
+		return () => window.removeEventListener("keydown", handler);
+	}, [open]);
+	(0, import_react.useEffect)(() => {
+		if (!open || !listRef.current) return;
+		const active = listRef.current.querySelector("[aria-selected=true]");
+		if (active) active.scrollIntoView({ block: "nearest" });
+	}, [open]);
+	const handleKeyDown = (e) => {
+		if (!open) {
+			if (e.key === "Enter" || e.key === " " || e.key === "ArrowDown") {
+				e.preventDefault();
+				setOpen(true);
+			}
+			return;
+		}
+		const items = listRef.current?.querySelectorAll("[role=option]");
+		if (!items) return;
+		const currentIdx = Array.from(items).findIndex((el) => el.dataset.value === value);
+		let nextIdx = currentIdx;
+		if (e.key === "ArrowDown") {
+			e.preventDefault();
+			nextIdx = Math.min(currentIdx + 1, items.length - 1);
+		} else if (e.key === "ArrowUp") {
+			e.preventDefault();
+			nextIdx = Math.max(currentIdx - 1, 0);
+		} else if (e.key === "Enter" || e.key === " ") {
+			e.preventDefault();
+			if (currentIdx >= 0) onChange(items[currentIdx].dataset.value);
+			setOpen(false);
+			btnRef.current?.focus();
+		} else if (e.key === "Escape") {
+			setOpen(false);
+			btnRef.current?.focus();
+		}
+		if (nextIdx !== currentIdx && nextIdx >= 0) {
+			items[nextIdx]?.focus();
+			onChange(items[nextIdx].dataset.value);
+		}
+	};
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 		style: { marginBottom: 24 },
+		onKeyDown: handleKeyDown,
 		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 			className: "aw-micro-label",
+			id: `${label}-label`,
 			children: label
 		}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			style: { position: "relative" },
-			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("select", {
-				value,
-				onChange: (e) => onChange(e.target.value),
-				className: "aw-select",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-					value: "",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+				ref: btnRef,
+				type: "button",
+				role: "combobox",
+				"aria-expanded": open,
+				"aria-haspopup": "listbox",
+				"aria-labelledby": `${label}-label`,
+				onClick: () => setOpen((p) => !p),
+				className: `aw-select ${open ? "aw-select-open" : ""}`,
+				style: {
+					width: "100%",
+					padding: "14px 16px",
+					backgroundColor: "rgba(255,255,255,0.02)",
+					color: selectedLabel ? "#fff" : "#666",
+					border: `1px solid rgba(255,255,255,${open ? "0.3" : "0.08"})`,
+					borderRadius: 8,
+					fontSize: 14,
+					outline: "none",
+					cursor: "pointer",
+					display: "flex",
+					alignItems: "center",
+					justifyContent: "space-between",
+					gap: 8,
+					textAlign: "left",
+					transition: "border-color 0.25s, background-color 0.25s"
+				},
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: selectedLabel ?? placeholder }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 					style: {
-						background: "#0e0f11",
-						color: "#666"
+						display: "flex",
+						transition: "transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
+						transform: open ? "rotate(180deg)" : "rotate(0deg)"
+					},
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ChevronDown, {})
+				})]
+			}), open && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("ul", {
+				ref: listRef,
+				role: "listbox",
+				tabIndex: -1,
+				"aria-label": label,
+				style: {
+					position: "absolute",
+					top: "calc(100% + 4px)",
+					left: 0,
+					right: 0,
+					zIndex: 50,
+					backgroundColor: "#16181a",
+					border: "1px solid rgba(255,255,255,0.1)",
+					borderRadius: 8,
+					padding: 4,
+					margin: 0,
+					listStyle: "none",
+					maxHeight: 220,
+					overflowY: "auto",
+					boxShadow: "0 12px 40px rgba(0,0,0,0.5)",
+					animation: "awFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards"
+				},
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", {
+					role: "option",
+					"aria-selected": value === "",
+					"data-value": "",
+					tabIndex: -1,
+					onClick: () => {
+						onChange("");
+						setOpen(false);
+						btnRef.current?.focus();
+					},
+					style: {
+						padding: "10px 14px",
+						borderRadius: 6,
+						fontSize: 13,
+						cursor: "pointer",
+						color: "#666",
+						backgroundColor: value === "" ? "rgba(255,255,255,0.04)" : "transparent"
 					},
 					children: placeholder
-				}), options.map((o) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("option", {
-					value: o.value,
+				}), options.map((o) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", {
+					role: "option",
+					"aria-selected": value === o.value,
+					"data-value": o.value,
+					tabIndex: -1,
+					onClick: () => {
+						onChange(o.value);
+						setOpen(false);
+						btnRef.current?.focus();
+					},
 					style: {
-						background: "#0e0f11",
-						color: "#fff"
+						padding: "10px 14px",
+						borderRadius: 6,
+						fontSize: 13,
+						cursor: "pointer",
+						color: "#fff",
+						backgroundColor: value === o.value ? "rgba(255,255,255,0.06)" : "transparent"
+					},
+					onMouseEnter: (e) => {
+						e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.04)";
+					},
+					onMouseLeave: (e) => {
+						e.currentTarget.style.backgroundColor = value === o.value ? "rgba(255,255,255,0.06)" : "transparent";
 					},
 					children: o.label
 				}, o.value))]
-			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-				className: "aw-select-icon",
-				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ChevronDown, {})
 			})]
 		})]
 	});
@@ -1076,6 +1209,67 @@ function OrderPanel() {
 		]
 	});
 }
+function ZoomableMenuImage({ src, alt }) {
+	const [coords, setCoords] = (0, import_react.useState)({
+		x: 50,
+		y: 50
+	});
+	const [isZoomed, setIsZoomed] = (0, import_react.useState)(false);
+	const handleMouseMove = (e) => {
+		const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
+		setCoords({
+			x: (e.clientX - left) / width * 100,
+			y: (e.clientY - top) / height * 100
+		});
+	};
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+		onMouseMove: handleMouseMove,
+		onMouseEnter: () => setIsZoomed(true),
+		onMouseLeave: () => setIsZoomed(false),
+		style: {
+			position: "relative",
+			width: "100%",
+			borderRadius: 16,
+			overflow: "hidden",
+			border: "1px solid rgba(255, 255, 255, 0.06)",
+			background: "#0e0f11",
+			cursor: "zoom-in"
+		},
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+			style: {
+				position: "absolute",
+				bottom: 16,
+				left: "50%",
+				transform: "translateX(-50%)",
+				zIndex: 10,
+				backgroundColor: "rgba(10, 11, 13, 0.85)",
+				backdropFilter: "blur(12px)",
+				WebkitBackdropFilter: "blur(12px)",
+				padding: "8px 16px",
+				borderRadius: "100px",
+				fontSize: "11px",
+				color: "rgba(255, 255, 255, 0.8)",
+				pointerEvents: "none",
+				letterSpacing: "0.08em",
+				textTransform: "uppercase",
+				opacity: isZoomed ? 0 : 1,
+				transition: "opacity 0.25s ease",
+				border: "1px solid rgba(255, 255, 255, 0.08)"
+			},
+			children: "Hover over to read"
+		}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+			src,
+			alt,
+			style: {
+				width: "100%",
+				display: "block",
+				transformOrigin: `${coords.x}% ${coords.y}%`,
+				transform: isZoomed ? "scale(2.2)" : "scale(1)",
+				transition: isZoomed ? "transform 0.1s ease-out, transform-origin 0.1s ease-out" : "transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform-origin 0.45s cubic-bezier(0.16, 1, 0.3, 1)"
+			}
+		})]
+	});
+}
 function MenuPortal({ onClose }) {
 	const stopProp = (e) => e.stopPropagation();
 	return (0, import_react_dom.createPortal)(/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("style", { children: `
@@ -1200,21 +1394,9 @@ function MenuPortal({ onClose }) {
 							children: "Galal Coffee Menu"
 						})]
 					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-						style: {
-							borderRadius: 16,
-							overflow: "hidden",
-							border: "1px solid rgba(255, 255, 255, 0.06)",
-							background: "#0e0f11"
-						},
-						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-							src: menu_default,
-							alt: "Menu list visualization",
-							style: {
-								width: "100%",
-								display: "block"
-							}
-						})
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ZoomableMenuImage, {
+						src: menu_default,
+						alt: "Menu list visualization"
 					})
 				]
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {

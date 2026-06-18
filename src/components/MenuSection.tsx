@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 
 import milkshake from "@/assets/milkshake.png";
@@ -155,27 +155,159 @@ function SelectBox({
   options: { value: string; label: string }[];
   placeholder: string;
 }) {
+  const [open, setOpen] = useState(false);
+  const listRef = useRef<HTMLUListElement>(null);
+  const btnRef = useRef<HTMLButtonElement>(null);
+
+  const selectedLabel = value
+    ? options.find((o) => o.value === value)?.label ?? value
+    : null;
+
+  useEffect(() => {
+    if (!open) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "Escape") { setOpen(false); btnRef.current?.focus(); }
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [open]);
+
+  useEffect(() => {
+    if (!open || !listRef.current) return;
+    const active = listRef.current.querySelector<HTMLLIElement>("[aria-selected=true]");
+    if (active) active.scrollIntoView({ block: "nearest" });
+  }, [open]);
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (!open) {
+      if (e.key === "Enter" || e.key === " " || e.key === "ArrowDown") {
+        e.preventDefault();
+        setOpen(true);
+      }
+      return;
+    }
+    const items = listRef.current?.querySelectorAll<HTMLLIElement>("[role=option]");
+    if (!items) return;
+    const currentIdx = Array.from(items).findIndex((el) => el.dataset.value === value);
+    let nextIdx = currentIdx;
+    if (e.key === "ArrowDown") { e.preventDefault(); nextIdx = Math.min(currentIdx + 1, items.length - 1); }
+    else if (e.key === "ArrowUp") { e.preventDefault(); nextIdx = Math.max(currentIdx - 1, 0); }
+    else if (e.key === "Enter" || e.key === " ") { e.preventDefault(); if (currentIdx >= 0) onChange(items[currentIdx].dataset.value!); setOpen(false); btnRef.current?.focus(); }
+    else if (e.key === "Escape") { setOpen(false); btnRef.current?.focus(); }
+    if (nextIdx !== currentIdx && nextIdx >= 0) {
+      items[nextIdx]?.focus();
+      onChange(items[nextIdx].dataset.value!);
+    }
+  };
+
   return (
-    <div style={{ marginBottom: 24 }}>
-      <p className="aw-micro-label">
+    <div style={{ marginBottom: 24 }} onKeyDown={handleKeyDown}>
+      <p className="aw-micro-label" id={`${label}-label`}>
         {label}
       </p>
       <div style={{ position: "relative" }}>
-        <select
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
-          className="aw-select"
+        <button
+          ref={btnRef}
+          type="button"
+          role="combobox"
+          aria-expanded={open}
+          aria-haspopup="listbox"
+          aria-labelledby={`${label}-label`}
+          onClick={() => setOpen((p) => !p)}
+          className={`aw-select ${open ? "aw-select-open" : ""}`}
+          style={{
+            width: "100%",
+            padding: "14px 16px",
+            backgroundColor: "rgba(255,255,255,0.02)",
+            color: selectedLabel ? "#fff" : "#666",
+            border: `1px solid rgba(255,255,255,${open ? "0.3" : "0.08"})`,
+            borderRadius: 8,
+            fontSize: 14,
+            outline: "none",
+            cursor: "pointer",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: 8,
+            textAlign: "left",
+            transition: "border-color 0.25s, background-color 0.25s",
+          }}
         >
-          <option value="" style={{ background: "#0e0f11", color: "#666" }}>{placeholder}</option>
-          {options.map((o) => (
-            <option key={o.value} value={o.value} style={{ background: "#0e0f11", color: "#fff" }}>
-              {o.label}
-            </option>
-          ))}
-        </select>
-        <span className="aw-select-icon">
-          <ChevronDown />
-        </span>
+          <span>{selectedLabel ?? placeholder}</span>
+          <span style={{
+            display: "flex",
+            transition: "transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)",
+            transform: open ? "rotate(180deg)" : "rotate(0deg)",
+          }}>
+            <ChevronDown />
+          </span>
+        </button>
+
+        {open && (
+          <ul
+            ref={listRef}
+            role="listbox"
+            tabIndex={-1}
+            aria-label={label}
+            style={{
+              position: "absolute",
+              top: "calc(100% + 4px)",
+              left: 0,
+              right: 0,
+              zIndex: 50,
+              backgroundColor: "#16181a",
+              border: "1px solid rgba(255,255,255,0.1)",
+              borderRadius: 8,
+              padding: 4,
+              margin: 0,
+              listStyle: "none",
+              maxHeight: 220,
+              overflowY: "auto",
+              boxShadow: "0 12px 40px rgba(0,0,0,0.5)",
+              animation: "awFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+            }}
+          >
+            <li
+              role="option"
+              aria-selected={value === ""}
+              data-value=""
+              tabIndex={-1}
+              onClick={() => { onChange(""); setOpen(false); btnRef.current?.focus(); }}
+              style={{
+                padding: "10px 14px",
+                borderRadius: 6,
+                fontSize: 13,
+                cursor: "pointer",
+                color: "#666",
+                backgroundColor: value === "" ? "rgba(255,255,255,0.04)" : "transparent",
+              }}
+            >
+              {placeholder}
+            </li>
+            {options.map((o) => (
+              <li
+                key={o.value}
+                role="option"
+                aria-selected={value === o.value}
+                data-value={o.value}
+                tabIndex={-1}
+                onClick={() => { onChange(o.value); setOpen(false); btnRef.current?.focus(); }}
+                style={{
+                  padding: "10px 14px",
+                  borderRadius: 6,
+                  fontSize: 13,
+                  cursor: "pointer",
+                  color: "#fff",
+                  backgroundColor: value === o.value ? "rgba(255,255,255,0.06)" : "transparent",
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.04)"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = value === o.value ? "rgba(255,255,255,0.06)" : "transparent"; }}
+              >
+                {o.label}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   );
@@ -318,6 +450,74 @@ function OrderPanel() {
   );
 }
 
+function ZoomableMenuImage({ src, alt }: { src: string; alt: string }) {
+  const [coords, setCoords] = useState({ x: 50, y: 50 });
+  const [isZoomed, setIsZoomed] = useState(false);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
+    const x = ((e.clientX - left) / width) * 100;
+    const y = ((e.clientY - top) / height) * 100;
+    setCoords({ x, y });
+  };
+
+  return (
+    <div
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setIsZoomed(true)}
+      onMouseLeave={() => setIsZoomed(false)}
+      style={{
+        position: "relative",
+        width: "100%",
+        borderRadius: 16,
+        overflow: "hidden",
+        border: "1px solid rgba(255, 255, 255, 0.06)",
+        background: "#0e0f11",
+        cursor: "zoom-in",
+      }}
+    >
+      <div
+        style={{
+          position: "absolute",
+          bottom: 16,
+          left: "50%",
+          transform: "translateX(-50%)",
+          zIndex: 10,
+          backgroundColor: "rgba(10, 11, 13, 0.85)",
+          backdropFilter: "blur(12px)",
+          WebkitBackdropFilter: "blur(12px)",
+          padding: "8px 16px",
+          borderRadius: "100px",
+          fontSize: "11px",
+          color: "rgba(255, 255, 255, 0.8)",
+          pointerEvents: "none",
+          letterSpacing: "0.08em",
+          textTransform: "uppercase",
+          opacity: isZoomed ? 0 : 1,
+          transition: "opacity 0.25s ease",
+          border: "1px solid rgba(255, 255, 255, 0.08)",
+        }}
+      >
+        Hover over to read
+      </div>
+
+      <img
+        src={src}
+        alt={alt}
+        style={{
+          width: "100%",
+          display: "block",
+          transformOrigin: `${coords.x}% ${coords.y}%`,
+          transform: isZoomed ? "scale(2.2)" : "scale(1)",
+          transition: isZoomed
+            ? "transform 0.1s ease-out, transform-origin 0.1s ease-out"
+            : "transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform-origin 0.45s cubic-bezier(0.16, 1, 0.3, 1)",
+        }}
+      />
+    </div>
+  );
+}
+
 function MenuPortal({ onClose }: { onClose: () => void }) {
   const stopProp = (e: React.MouseEvent) => e.stopPropagation();
 
@@ -423,9 +623,7 @@ function MenuPortal({ onClose }: { onClose: () => void }) {
                 Galal Coffee Menu
               </h2>
             </div>
-            <div style={{ borderRadius: 16, overflow: "hidden", border: "1px solid rgba(255, 255, 255, 0.06)", background: "#0e0f11" }}>
-              <img src={menuPng} alt="Menu list visualization" style={{ width: "100%", display: "block" }} />
-            </div>
+            <ZoomableMenuImage src={menuPng} alt="Menu list visualization" />
           </div>
 
           {/* Right Panel: Transaction / Configurator */}
