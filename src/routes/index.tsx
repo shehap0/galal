@@ -848,7 +848,7 @@ function Footer() {
         <div className="mt-16 pt-8 border-t border-cream/10 flex flex-wrap items-center justify-between gap-4 text-cream/40 text-xs tracking-wide">
           <div>
             Made with ❤️ love by{" "}
-            <a href="https://www.facebook.com/people/Auto-synapse/61590422384756/" target="_blank" rel="noopener noreferrer" className="shehap-link">Auto synapse</a>
+            <a href="https://github.com/shehap0" target="_blank" rel="noopener noreferrer" className="shehap-link">Shehap</a>
             {" "}&middot; Port Said &middot; Cairo &middot; Ismailia &middot; Damietta, Egypt
           </div>
           <div className="flex items-center gap-6">
