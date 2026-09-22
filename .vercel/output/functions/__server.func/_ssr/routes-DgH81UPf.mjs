@@ -2757,11 +2757,11 @@ function Footer() {
 					"Made with ❤️ love by",
 					" ",
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-						href: "https://www.facebook.com/people/Auto-synapse/61590422384756/",
+						href: "https://github.com/shehap0",
 						target: "_blank",
 						rel: "noopener noreferrer",
 						className: "shehap-link",
-						children: "Auto synapse"
+						children: "Shehap"
 					}),
 					" ",
 					"· Port Said · Cairo · Ismailia · Damietta, Egypt"
